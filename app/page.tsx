@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import Services from "@/components/Services"
 import OurExperts from "@/components/Our_expert"
 import Testimonials  from "@/components/Testimonials"
-
+import HowItWorks from "@/components/How_it_works"
 export default function LandingPage() {
   const [helpOpen, setHelpOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
@@ -166,6 +166,7 @@ export default function LandingPage() {
       <OurExperts />
         <Services />
         <Testimonials/>
+        <HowItWorks/>
       {/* </div> */}
     </div>
   )

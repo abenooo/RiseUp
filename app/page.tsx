@@ -4,6 +4,7 @@ import { Shield, ChevronDown } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Services from "@/components/Services"
+import OurExperts from "@/components/Our_expert"
 
 export default function LandingPage() {
   const [helpOpen, setHelpOpen] = useState(false)
@@ -161,6 +162,7 @@ export default function LandingPage() {
 
       {/* Rest of your components */}
       {/* <div className="flex flex-col items-center justify-center"> */}
+      <OurExperts />
         <Services />
       {/* </div> */}
     </div>

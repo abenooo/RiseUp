@@ -1,11 +1,15 @@
+"use client"
 import Link from "next/link"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Shield } from "lucide-react"
+import { Shield, MessageSquare, BookOpen, Users, Bot, ChevronDown } from "lucide-react"
+import { useState } from "react"
 
 export default function LandingPage() {
+  const [servicesOpen, setServicesOpen] = useState(false)
+
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
       <header className="border-b border-zinc-800">
@@ -14,18 +18,67 @@ export default function LandingPage() {
             <Shield className="h-6 w-6 text-fuchsia-500" />
             <span className="text-xl font-bold">BreakFree</span>
           </div>
-          <nav className="hidden md:flex items-center gap-6">
-            <Link href="#features" className="text-sm font-medium hover:text-fuchsia-400 transition-colors">
-              Features
+          <nav className="hidden md:flex items-center gap-6 relative">
+            {/* Services Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button
+                className="flex items-center text-sm font-medium hover:text-fuchsia-400 transition-colors focus:outline-none"
+                aria-haspopup="true"
+                aria-expanded={servicesOpen}
+              >
+                Services
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              {servicesOpen && (
+                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-zinc-900 border border-zinc-800 z-50">
+                  <div className="py-2">
+                    <Link
+                      href="#talk-to-experts"
+                      className="block px-4 py-2 text-sm hover:bg-zinc-800 transition-colors"
+                    >
+                      Talk to Experts
+                    </Link>
+                    <Link
+                      href="#community"
+                      className="block px-4 py-2 text-sm hover:bg-zinc-800 transition-colors"
+                    >
+                      Community
+                    </Link>
+                    <Link
+                      href="#resources"
+                      className="block px-4 py-2 text-sm hover:bg-zinc-800 transition-colors"
+                    >
+                      Resources
+                    </Link>
+                    <Link
+                      href="#for-groups"
+                      className="block px-4 py-2 text-sm hover:bg-zinc-800 transition-colors"
+                    >
+                      For Groups
+                    </Link>
+                    <Link
+                      href="#ai-friend"
+                      className="block px-4 py-2 text-sm hover:bg-zinc-800 transition-colors"
+                    >
+                      AI Friend
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+            {/* Other nav items */}
+            <Link href="#get-help" className="text-sm font-medium hover:text-fuchsia-400 transition-colors">
+              Get Help For
             </Link>
-            <Link href="#how-it-works" className="text-sm font-medium hover:text-fuchsia-400 transition-colors">
-              How It Works
+            <Link href="#therapy" className="text-sm font-medium hover:text-fuchsia-400 transition-colors">
+              Therapy
             </Link>
-            <Link href="#testimonials" className="text-sm font-medium hover:text-fuchsia-400 transition-colors">
-              Testimonials
-            </Link>
-            <Link href="#faq" className="text-sm font-medium hover:text-fuchsia-400 transition-colors">
-              FAQ
+            <Link href="#community" className="text-sm font-medium hover:text-fuchsia-400 transition-colors">
+              Community
             </Link>
           </nav>
           <div className="flex items-center gap-4">
@@ -54,11 +107,10 @@ export default function LandingPage() {
               <div className="space-y-6">
                 <Badge className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white">Anonymous Support</Badge>
                 <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                  Your Journey to Recovery Starts Here
+                  Break Free From Addiction
                 </h1>
                 <p className="max-w-[600px] text-zinc-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  BreakFree is your anonymous hub to overcome addiction. Chat, share, and earn points from community
-                  votes. Together, we heal.
+                  Your anonymous hub to overcome addiction with community support, expert advice, and AI guidance.
                 </p>
                 <div className="flex flex-col gap-3 min-[400px]:flex-row">
                   <Link href="/dashboard">
@@ -104,256 +156,187 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Features Grid Section */}
-        <section id="features" className="py-20 bg-black">
+        {/* Services Section */}
+        <section id="services" className="py-20 bg-black">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <div className="space-y-2">
-                <Badge className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white">Key Features</Badge>
+                <Badge className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white">Our Services</Badge>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Tools for Your Recovery Journey
+                  Comprehensive Support System
                 </h2>
-                <p className="max-w-[900px] text-zinc-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  BreakFree provides everything you need to overcome addiction, with a supportive community and
-                  personalized guidance.
-                </p>
               </div>
             </div>
-
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {/* Feature 1 */}
-              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
-                <div className="mb-4">
-                  <Image
-                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&h=200&q=80"
-                    alt="Anonymous Addiction Support"
-                    width={300}
-                    height={200}
-                    className="rounded-lg w-full h-48 object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Anonymous Addiction Support</h3>
-                <p className="text-zinc-400">Connect with others in a safe, anonymous space to share and heal.</p>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800 flex flex-col items-center text-center">
+                <MessageSquare className="h-8 w-8 text-fuchsia-500 mb-3" />
+                <h3 className="text-lg font-bold mb-2">Talk to Experts</h3>
+                <p className="text-zinc-400 text-sm">Connect with certified addiction specialists</p>
               </div>
-
-              {/* Feature 2 */}
-              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
-                <div className="mb-4">
-                  <Image
-                    src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&h=200&q=80"
-                    alt="Chat Rooms"
-                    width={300}
-                    height={200}
-                    className="rounded-lg w-full h-48 object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Chat Rooms</h3>
-                <p className="text-zinc-400">Engage in real-time discussions and support with our active community.</p>
+              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800 flex flex-col items-center text-center">
+                <Users className="h-8 w-8 text-fuchsia-500 mb-3" />
+                <h3 className="text-lg font-bold mb-2">Community</h3>
+                <p className="text-zinc-400 text-sm">Join our supportive recovery community</p>
               </div>
-
-              {/* Feature 3 */}
-              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
-                <div className="mb-4">
-                  <Image
-                    src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&h=200&q=80"
-                    alt="Community Voting System"
-                    width={300}
-                    height={200}
-                    className="rounded-lg w-full h-48 object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Community Voting System</h3>
-                <p className="text-zinc-400">
-                  Participate in community decisions through our interactive voting system.
-                </p>
+              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800 flex flex-col items-center text-center">
+                <BookOpen className="h-8 w-8 text-fuchsia-500 mb-3" />
+                <h3 className="text-lg font-bold mb-2">Resources</h3>
+                <p className="text-zinc-400 text-sm">Access helpful articles and guides</p>
               </div>
-
-              {/* Feature 4 */}
-              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
-                <div className="mb-4">
-                  <Image
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&h=200&q=80"
-                    alt="Badges System"
-                    width={300}
-                    height={200}
-                    className="rounded-lg w-full h-48 object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Badges System</h3>
-                <p className="text-zinc-400">Earn badges as you progress and achieve milestones in your journey.</p>
+              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800 flex flex-col items-center text-center">
+                <Users className="h-8 w-8 text-fuchsia-500 mb-3" />
+                <h3 className="text-lg font-bold mb-2">For Groups</h3>
+                <p className="text-zinc-400 text-sm">Support for organizations and teams</p>
               </div>
-
-              {/* Feature 5 */}
-              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
-                <div className="mb-4">
-                  <Image
-                    src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&h=200&q=80"
-                    alt="AI Personalized Advice"
-                    width={300}
-                    height={200}
-                    className="rounded-lg w-full h-48 object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-bold mb-2">AI Personalized Advice</h3>
-                <p className="text-zinc-400">Receive customized advice from our AI tailored to your unique needs.</p>
-              </div>
-
-              {/* Feature 6 */}
-              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
-                <div className="mb-4">
-                  <Image
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&h=200&q=80"
-                    alt="Progress Tracking"
-                    width={300}
-                    height={200}
-                    className="rounded-lg w-full h-48 object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Progress Tracking</h3>
-                <p className="text-zinc-400">Monitor your progress over time with detailed tracking features.</p>
+              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800 flex flex-col items-center text-center">
+                <Bot className="h-8 w-8 text-fuchsia-500 mb-3" />
+                <h3 className="text-lg font-bold mb-2">AI Friend</h3>
+                <p className="text-zinc-400 text-sm">24/7 AI support companion</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* How It Works */}
-        <section id="how-it-works" className="py-20 bg-zinc-900">
+        {/* Get Help For Section */}
+        <section id="get-help" className="py-20 bg-zinc-900">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <div className="space-y-2">
-                <Badge className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white">Simple Process</Badge>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">How BreakFree Works</h2>
-                <p className="max-w-[900px] text-zinc-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Getting started on your recovery journey is easy with BreakFree.
-                </p>
+                <Badge className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white">We Can Help</Badge>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get Help For</h2>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-3">
-              <div className="flex flex-col items-center space-y-4 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-fuchsia-900">
-                  <span className="text-2xl font-bold text-fuchsia-400">1</span>
-                </div>
-                <h3 className="text-xl font-bold">Create Your Anonymous Profile</h3>
-                <p className="text-zinc-400">
-                  Sign up without sharing personal information. Choose a username that resonates with your journey.
-                </p>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="bg-zinc-800 p-6 rounded-xl">
+                <h3 className="text-lg font-bold mb-3">Addiction Types</h3>
+                <ul className="space-y-2 text-zinc-400">
+                  <li>Substance Addiction</li>
+                  <li>Alcohol Dependence</li>
+                  <li>Nicotine Addiction</li>
+                  <li>Gambling Problems</li>
+                  <li>Internet Addiction</li>
+                </ul>
               </div>
-              <div className="flex flex-col items-center space-y-4 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-fuchsia-900">
-                  <span className="text-2xl font-bold text-fuchsia-400">2</span>
-                </div>
-                <h3 className="text-xl font-bold">Connect With The Community</h3>
-                <p className="text-zinc-400">
-                  Join discussions, share your experiences, and support others on their recovery journey.
-                </p>
+              <div className="bg-zinc-800 p-6 rounded-xl">
+                <h3 className="text-lg font-bold mb-3">Emotional Challenges</h3>
+                <ul className="space-y-2 text-zinc-400">
+                  <li>Anxiety & Stress</li>
+                  <li>Depression</li>
+                  <li>Peer Pressure</li>
+                  <li>Low Self-Esteem</li>
+                  <li>Feeling Lost</li>
+                </ul>
               </div>
-              <div className="flex flex-col items-center space-y-4 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-fuchsia-900">
-                  <span className="text-2xl font-bold text-fuchsia-400">3</span>
-                </div>
-                <h3 className="text-xl font-bold">Track Progress & Earn Rewards</h3>
-                <p className="text-zinc-400">
-                  Check in daily, complete challenges, and watch as your achievements and badges accumulate.
-                </p>
+              <div className="bg-zinc-800 p-6 rounded-xl">
+                <h3 className="text-lg font-bold mb-3">Social Issues</h3>
+                <ul className="space-y-2 text-zinc-400">
+                  <li>Social Anxiety</li>
+                  <li>Isolation</li>
+                  <li>Relationship Strain</li>
+                  <li>Family Conflicts</li>
+                  <li>Workplace Stress</li>
+                </ul>
               </div>
-            </div>
-            <div className="flex justify-center">
-              <Link href="/dashboard">
-                <Button size="lg" className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white">
-                  Start Your Journey Now
-                </Button>
-              </Link>
             </div>
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section id="testimonials" className="py-20 bg-black">
+        {/* Therapy Section */}
+        <section id="therapy" className="py-20 bg-black">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <div className="space-y-2">
-                <Badge className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white">Success Stories</Badge>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Hear From Our Community</h2>
-                <p className="max-w-[900px] text-zinc-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Real stories from real people who have found support through BreakFree.
-                </p>
+                <Badge className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white">Professional Help</Badge>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Therapy & Coaching</h2>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="bg-zinc-900 border-zinc-800">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="h-10 w-10 rounded-full bg-fuchsia-900 flex items-center justify-center">
-                      <span className="font-bold text-fuchsia-400">A</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold">Anonymous27</p>
-                      <p className="text-sm text-zinc-400">90 days clean</p>
-                    </div>
-                  </div>
-                  <p className="text-zinc-400">
-                    "The daily check-ins and badges kept me accountable. For the first time, I felt proud of my progress
-                    and had a community that understood my struggles."
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="bg-zinc-900 border-zinc-800">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="h-10 w-10 rounded-full bg-fuchsia-900 flex items-center justify-center">
-                      <span className="font-bold text-fuchsia-400">B</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold">HealingJourney</p>
-                      <p className="text-sm text-zinc-400">6 months clean</p>
-                    </div>
-                  </div>
-                  <p className="text-zinc-400">
-                    "The AI guidance was like having a personal coach available 24/7. It helped me identify triggers and
-                    develop coping strategies that actually worked for me."
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="bg-zinc-900 border-zinc-800">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="h-10 w-10 rounded-full bg-fuchsia-900 flex items-center justify-center">
-                      <span className="font-bold text-fuchsia-400">C</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold">NewBeginnings</p>
-                      <p className="text-sm text-zinc-400">1 year milestone</p>
-                    </div>
-                  </div>
-                  <p className="text-zinc-400">
-                    "Being able to share anonymously removed the shame I felt. The community challenges connected me
-                    with others who became my support system through the hardest times."
-                  </p>
-                </CardContent>
-              </Card>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
+                <h3 className="text-lg font-bold mb-3">Therapy Services</h3>
+                <ul className="space-y-2 text-zinc-400">
+                  <li>Addiction Counseling</li>
+                  <li>Individual Therapy</li>
+                  <li>Group Therapy</li>
+                  <li>Online Sessions</li>
+                  <li>Family Therapy</li>
+                </ul>
+              </div>
+              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
+                <h3 className="text-lg font-bold mb-3">Recovery Coaching</h3>
+                <ul className="space-y-2 text-zinc-400">
+                  <li>Life Coaching</li>
+                  <li>Mindfulness Training</li>
+                  <li>Relapse Prevention</li>
+                  <li>Habit Formation</li>
+                  <li>Goal Setting</li>
+                </ul>
+              </div>
+              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
+                <h3 className="text-lg font-bold mb-3">Specialized Support</h3>
+                <ul className="space-y-2 text-zinc-400">
+                  <li>Youth Programs</li>
+                  <li>LGBTQ+ Support</li>
+                  <li>Trauma Therapy</li>
+                  <li>Dual Diagnosis</li>
+                  <li>Aftercare Planning</li>
+                </ul>
+              </div>
+              <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-800">
+                <h3 className="text-lg font-bold mb-3">Wellness Programs</h3>
+                <ul className="space-y-2 text-zinc-400">
+                  <li>Mind-Body Connection</li>
+                  <li>Nutrition Guidance</li>
+                  <li>Sleep Improvement</li>
+                  <li>Stress Management</li>
+                  <li>View All Programs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Community Testimonial */}
+        <section id="community" className="py-20 bg-zinc-900">
+          <div className="container px-4 md:px-6">
+            <div className="bg-zinc-800 p-8 rounded-xl max-w-3xl mx-auto">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-12 w-12 rounded-full bg-fuchsia-900 flex items-center justify-center">
+                  <span className="font-bold text-fuchsia-400">A</span>
+                </div>
+                <div>
+                  <p className="font-semibold">AnonymousUser</p>
+                  <p className="text-sm text-zinc-400">60 days sober</p>
+                </div>
+              </div>
+              <blockquote className="text-lg italic text-zinc-300 mb-6">
+                "I love this platform. It's unusual for me to open up to anyone. My heart used to be stacked up with heavy thoughts and negativity. But here it's nice that I can vent about stuff to random people without feeling judged. I feel a lot better after joining."
+              </blockquote>
+              <div className="flex items-center gap-2">
+                <Badge variant="outline" className="border-fuchsia-500 text-fuchsia-400">Anxiety</Badge>
+                <Badge variant="outline" className="border-fuchsia-500 text-fuchsia-400">Recovery</Badge>
+                <Badge variant="outline" className="border-fuchsia-500 text-fuchsia-400">Community</Badge>
+              </div>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-zinc-900">
+        <section className="py-20 bg-gradient-to-r from-fuchsia-900 to-purple-900">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Ready to Break Free?</h2>
-                <p className="max-w-[900px] text-zinc-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Join our community today and start your journey towards recovery.
-                </p>
-              </div>
+            <div className="flex flex-col items-center justify-center space-y-6 text-center">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Ready to Start Your Recovery Journey?</h2>
+              <p className="max-w-[600px] text-zinc-300 md:text-xl">
+                Join thousands who have found support and strength in our community.
+              </p>
               <div className="flex flex-col gap-3 min-[400px]:flex-row">
                 <Link href="/dashboard">
-                  <Button size="lg" className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white">
-                    SIGN UP
+                  <Button size="lg" className="bg-white hover:bg-zinc-100 text-fuchsia-800">
+                    SIGN UP FREE
                   </Button>
                 </Link>
                 <Link href="/dashboard">
-                  <Button variant="outline" size="lg" className="border-zinc-700 hover:bg-zinc-800 text-white">
-                    LOG IN
+                  <Button variant="outline" size="lg" className="border-white hover:bg-white/10 text-white">
+                    LEARN MORE
                   </Button>
                 </Link>
               </div>
@@ -369,13 +352,16 @@ export default function LandingPage() {
           </div>
           <nav className="flex gap-4 sm:gap-6">
             <Link href="#" className="text-sm text-zinc-400 hover:text-white hover:underline underline-offset-4">
-              Privacy Policy
+              Privacy
             </Link>
             <Link href="#" className="text-sm text-zinc-400 hover:text-white hover:underline underline-offset-4">
-              Terms of Service
+              Terms
             </Link>
             <Link href="#" className="text-sm text-zinc-400 hover:text-white hover:underline underline-offset-4">
-              Contact Us
+              Contact
+            </Link>
+            <Link href="#" className="text-sm text-zinc-400 hover:text-white hover:underline underline-offset-4">
+              FAQ
             </Link>
           </nav>
           <div className="flex gap-4">

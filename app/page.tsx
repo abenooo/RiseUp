@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Shield, ChevronDown } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+import Services from "@/components/Services"
 
 export default function LandingPage() {
   const [helpOpen, setHelpOpen] = useState(false)
@@ -80,7 +81,7 @@ export default function LandingPage() {
                   </div>
                   
                   {/* Column 5 */}
-                  <div className="space-y-2">
+                  {/* <div className="space-y-2">
                     <h3 className="text-sm font-semibold text-fuchsia-400 mb-2">More Support</h3>
                     <Link href="/support/exam-anxiety" className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors">Exam Anxiety</Link>
                     <Link href="/support/confidence" className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors">Lack Of Confidence</Link>
@@ -91,7 +92,7 @@ export default function LandingPage() {
                     <Link href="/support/low-self-esteem" className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors">Low Self-Esteem</Link>
                     <Link href="/support/anxiety-therapy" className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors">Anxiety Therapy</Link>
                     <Link href="/support/mindset" className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors">Mindset Transformation</Link>
-                  </div>
+                  </div> */}
                 </div>
                 
                 <div className="mt-4 pt-3 border-t border-zinc-700">
@@ -159,6 +160,9 @@ export default function LandingPage() {
       </header>
 
       {/* Rest of your components */}
+      {/* <div className="flex flex-col items-center justify-center"> */}
+        <Services />
+      {/* </div> */}
     </div>
   )
 }

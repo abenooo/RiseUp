@@ -41,12 +41,6 @@ export default function Services() {
       href: "/self-esteem"
     },
     {
-      title: "Burnout",
-      description: "Exhausted from constant pressure? Recover your energy and prevent future burnout.",
-      icon: <Brain className="h-6 w-6 text-fuchsia-500" />,
-      href: "/burnout"
-    },
-    {
       title: "Life Transitions",
       description: "Struggling with change? Navigate life's transitions with expert guidance.",
       icon: <HelpCircle className="h-6 w-6 text-fuchsia-500" />,

@@ -8,92 +8,145 @@ import { Shield, MessageSquare, BookOpen, Users, Bot, ChevronDown } from "lucide
 import { useState } from "react"
 
 export default function LandingPage() {
-  const [servicesOpen, setServicesOpen] = useState(false)
+  const [expertsOpen, setExpertsOpen] = useState(false)
+  const [helpOpen, setHelpOpen] = useState(false)
 
   return (
     <div className="flex min-h-screen flex-col bg-black text-white">
-      <header className="border-b border-zinc-800">
+      <header className="border-b border-zinc-800 bg-white">
         <div className="container flex h-16 items-center justify-between py-4">
           <div className="flex items-center gap-2">
             <Shield className="h-6 w-6 text-fuchsia-500" />
-            <span className="text-xl font-bold">BreakFree</span>
+            <span className="text-xl font-bold text-black">BreakFree</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 relative">
-            {/* Services Dropdown */}
+            {/* Get Help For Mega Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
+              onMouseEnter={() => setHelpOpen(true)}
+              onMouseLeave={() => setHelpOpen(false)}
             >
               <button
-                className="flex items-center text-sm font-medium hover:text-fuchsia-400 transition-colors focus:outline-none"
+                className="flex items-center text-sm font-medium text-orange-500 hover:text-fuchsia-600 transition-colors focus:outline-none"
                 aria-haspopup="true"
-                aria-expanded={servicesOpen}
+                aria-expanded={helpOpen}
               >
-                Services
+                Get Help For
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              {servicesOpen && (
-                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-zinc-900 border border-zinc-800 z-50">
+              {helpOpen && (
+                <div className="absolute left-0 mt-2 w-[800px] rounded-xl shadow-2xl bg-white border border-zinc-200 z-50 p-8 flex gap-12">
+                  {/* Column 1 */}
+                  <div>
+                    <div className="text-base font-semibold text-orange-500 mb-4">Get Help For:</div>
+                    <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-black text-sm min-w-[220px]">
+                      <span>Anxiety</span>
+                      <span>Trauma</span>
+                      <span>Panic Attacks</span>
+                      <span>Stress</span>
+                      <span>Burnout</span>
+                      <span>Peer Pressure</span>
+                      <span>Sadness</span>
+                      <span>Societal Pressure</span>
+                      <span>Toxic Workplace</span>
+                      <span>Confusion</span>
+                      <span>Inferiority Complex</span>
+                      <span>Imposter Syndrome</span>
+                      <span>Feeling Lost</span>
+                      <span>Exam Anxiety</span>
+                      <span>Lack Of Confidence</span>
+                      <span>Feeling Alone</span>
+                      <span>Social Anxiety</span>
+                      <span>Low Self-Esteem</span>
+                    </div>
+                  </div>
+                  {/* Column 2 */}
+                  <div>
+                    <div className="text-base font-semibold text-orange-500 mb-4">Therapy for Mental Wellness</div>
+                    <ul className="space-y-2 text-black text-sm">
+                      <li>Marriage Counseling</li>
+                      <li>Relationship Counseling</li>
+                      <li>Depression Counseling</li>
+                      <li>Individual Therapy</li>
+                      <li>Anxiety Therapy</li>
+                      <li>Online Therapy</li>
+                    </ul>
+                  </div>
+                  {/* Column 3 */}
+                  <div>
+                    <div className="text-base font-semibold text-orange-500 mb-4">Coaching For Self-Improvement</div>
+                    <ul className="space-y-2 text-black text-sm">
+                      <li>Life Coaching</li>
+                      <li>Mindfulness Coaching</li>
+                      <li>Positivity Coaching</li>
+                      <li>Career Coaching</li>
+                      <li>Sexual Wellness Coaching</li>
+                      <li>Mindset Transformation</li>
+                      <li>
+                        <a href="#" className="text-orange-500 font-medium hover:underline">View All</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </div>
+            {/* Talk to Experts Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setExpertsOpen(true)}
+              onMouseLeave={() => setExpertsOpen(false)}
+            >
+              <button
+                className="flex items-center text-sm font-medium text-black hover:text-fuchsia-600 transition-colors focus:outline-none"
+                aria-haspopup="true"
+                aria-expanded={expertsOpen}
+              >
+                Talk to Experts
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              {expertsOpen && (
+                <div className="absolute left-0 mt-2 w-64 rounded-lg shadow-lg bg-white border border-zinc-200 z-50">
                   <div className="py-2">
-                    <Link
-                      href="#talk-to-experts"
-                      className="block px-4 py-2 text-sm hover:bg-zinc-800 transition-colors"
-                    >
-                      Talk to Experts
-                    </Link>
-                    <Link
-                      href="#community"
-                      className="block px-4 py-2 text-sm hover:bg-zinc-800 transition-colors"
-                    >
-                      Community
-                    </Link>
-                    <Link
-                      href="#resources"
-                      className="block px-4 py-2 text-sm hover:bg-zinc-800 transition-colors"
-                    >
-                      Resources
-                    </Link>
-                    <Link
-                      href="#for-groups"
-                      className="block px-4 py-2 text-sm hover:bg-zinc-800 transition-colors"
-                    >
-                      For Groups
-                    </Link>
-                    <Link
-                      href="#ai-friend"
-                      className="block px-4 py-2 text-sm hover:bg-zinc-800 transition-colors"
-                    >
-                      AI Friend
-                    </Link>
+                    <div className="px-4 py-2 text-xs font-semibold text-fuchsia-600">Connect with</div>
+                    <Link href="#" className="block px-4 py-2 text-sm text-black hover:bg-zinc-100">Therapist</Link>
+                    <Link href="#" className="block px-4 py-2 text-sm text-black hover:bg-zinc-100">Relationship Coach</Link>
+                    <Link href="#" className="block px-4 py-2 text-sm text-black hover:bg-zinc-100">Counseling Psychologist</Link>
+                    <Link href="#" className="block px-4 py-2 text-sm text-black hover:bg-zinc-100">Clinical Psychologist</Link>
+                    <Link href="#" className="block px-4 py-2 text-sm text-black hover:bg-zinc-100">Life Coach</Link>
+                    <Link href="#" className="block px-4 py-2 text-sm text-black hover:bg-zinc-100">Mindfulness Coach</Link>
+                    <Link href="#" className="block px-4 py-2 text-sm text-black hover:bg-zinc-100">Positivity Coach</Link>
+                    <Link href="#" className="block px-4 py-2 text-sm text-black hover:bg-zinc-100">Career Coach</Link>
+                    <Link href="#" className="block px-4 py-2 text-sm text-black hover:bg-zinc-100">Sexual Wellness Coach</Link>
+                    <Link href="#" className="block px-4 py-2 text-sm text-black hover:bg-zinc-100">Mindset Transformation Coach</Link>
                   </div>
                 </div>
               )}
             </div>
             {/* Other nav items */}
-            <Link href="#get-help" className="text-sm font-medium hover:text-fuchsia-400 transition-colors">
-              Get Help For
-            </Link>
-            <Link href="#therapy" className="text-sm font-medium hover:text-fuchsia-400 transition-colors">
-              Therapy
-            </Link>
-            <Link href="#community" className="text-sm font-medium hover:text-fuchsia-400 transition-colors">
+            <Link href="#community" className="text-sm font-medium text-black hover:text-fuchsia-600 transition-colors">
               Community
+            </Link>
+            <Link href="#blogs" className="text-sm font-medium text-black hover:text-fuchsia-600 transition-colors">
+              Blogs & Resources
+            </Link>
+            <Link href="#corporates" className="text-sm font-medium text-black hover:text-fuchsia-600 transition-colors">
+              For Corporates
+            </Link>
+            <Link href="#ai-friend" className="text-sm font-medium text-black hover:text-fuchsia-600 transition-colors">
+              AI Friend
             </Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Link href="/dashboard">
-              <Button
-                variant="outline"
-                size="sm"
-                className="hidden md:flex border-zinc-700 hover:bg-zinc-800 text-white"
-              >
-                Log In
-              </Button>
-            </Link>
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-fuchsia-600 text-fuchsia-600 hover:bg-fuchsia-50"
+            >
+              Find Therapist
+            </Button>
             <Link href="/dashboard">
               <Button size="sm" className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white">
-                Get Started
+                Sign Up
               </Button>
             </Link>
           </div>

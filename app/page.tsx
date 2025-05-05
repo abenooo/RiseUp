@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Services from "@/components/Services"
 import OurExperts from "@/components/Our_expert"
+import Testimonials  from "@/components/Testimonials"
 
 export default function LandingPage() {
   const [helpOpen, setHelpOpen] = useState(false)
@@ -164,6 +165,7 @@ export default function LandingPage() {
       {/* <div className="flex flex-col items-center justify-center"> */}
       <OurExperts />
         <Services />
+        <Testimonials/>
       {/* </div> */}
     </div>
   )

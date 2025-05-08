@@ -9,6 +9,7 @@ import { FAQSection } from '@/components/FAQSection';
 import HowItWorks from "@/components/How_it_works"
 import OurExperts from '@/components/Our_expert';
 import Services from '@/components/Services';
+import Hero from '@/components/Hero';
 export default function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [expertsOpen, setExpertsOpen] = useState(false);
@@ -177,6 +178,7 @@ export default function Navbar() {
         </div>
       </div>
     </header>
+    <Hero/>
 <OurExperts/>
 <Services/>
     <Testimonials/>

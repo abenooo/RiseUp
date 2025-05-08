@@ -14,7 +14,7 @@ export default function Home() {
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
                 Build A Holistic Lifestyle
               </h1>
-              <h2 className="text-2xl md:text-3xl font-semibold text-[#1A1A1A]">With Now&Me Therapy</h2>
+              <h2 className="text-2xl md:text-3xl font-semibold text-[#1A1A1A]">With RiseUp Therapy</h2>
             </div>
 
             <ul className="space-y-6">
@@ -159,10 +159,10 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h3 className="text-3xl font-semibold flex items-center justify-center gap-3">
-             <span className="text-[#F97E5A]">Why Now&Me?</span>
+             <span className="text-[#F97E5A]">Why RiseUp?</span>
           </h3>
           <p className="text-lg text-[#4A4A4A] max-w-3xl mx-auto">
-            A therapeutic relationship is built on trust and confidence. At Now&Me, we provide you with the right expert
+            A therapeutic relationship is built on trust and confidence. At RiseUp, we provide you with the right expert
             who can help you feel safe and comfortable in your mental health journey.
           </p>
         </div>

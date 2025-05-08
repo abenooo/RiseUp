@@ -69,9 +69,9 @@ export default function Home() {
                 <div className="bg-white p-3 rounded-xl shadow-md max-w-[200px] md:max-w-[220px]">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="text-xs text-gray-500">3am Thoughts</div>
-                    <div className="text-xs bg-yellow-100 px-2 py-0.5 rounded-full">Happy</div>
+                    <div className="text-xs bg-yellow-100 text-gray-500 px-2 py-0.5 rounded-full">Happy</div>
                   </div>
-                  <p className="text-sm font-medium">I feel better after therapy...</p>
+                  <p className="text-sm text-gray-500 font-medium">I feel better after therapy...</p>
                   <div className="flex items-center gap-1 mt-2">
                     <span>🧡</span>
                     <span>🤗</span>
@@ -100,7 +100,7 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="flex items-center">
-                        <p className="text-sm font-medium">Purnima K.</p>
+                        <p className="text-sm text-gray-500 font-medium">Purnima K.</p>
                         <span className="ml-1 text-orange-500">●</span>
                       </div>
                       <p className="text-xs text-gray-600">Positive Mindset Coach</p>

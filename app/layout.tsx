@@ -6,9 +6,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "BreakFree - Your Anonymous Hub for Addiction Recovery",
+  title: "RiseUp - Your Anonymous Hub for Addiction Recovery",
   description:
-    "BreakFree is your anonymous hub to overcome addiction. Chat, share, and earn points from community votes. Together, we heal.",
+    "RiseUp is your anonymous hub to overcome addiction. Chat, share, and earn points from community votes. Together, we heal.",
     generator: 'v0.dev'
 }
 

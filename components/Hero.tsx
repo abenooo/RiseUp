@@ -12,7 +12,7 @@ export default function Home() {
           <div className="space-y-8">
             <div className="space-y-2">
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
-                Build A Holistic Lifestyle
+                Build A Holistic Lifestyle 
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-[#1A1A1A]">With RiseUp Therapy</h2>
             </div>
@@ -41,7 +41,7 @@ export default function Home() {
 
             <Button
               size="lg"
-              className="text-lg bg-[#2A6B67] hover:bg-[#235753] text-white rounded-md px-6 py-6 h-auto flex items-center gap-2"
+              className="text-lg bg-fuchsia-400 text-white hover:bg-fuchsia-500 rounded-md px-6 py-6 h-auto flex items-center gap-2"
             >
               <MessageCircle size={20} />
               Chat with us
@@ -100,7 +100,7 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="flex items-center">
-                        <p className="text-sm text-gray-500 font-medium">Purnima K.</p>
+                        <p className="text-sm text-gray-500 font-medium">Abenezer K.</p>
                         <span className="ml-1 text-orange-500">●</span>
                       </div>
                       <p className="text-xs text-gray-600">Positive Mindset Coach</p>
@@ -111,8 +111,8 @@ export default function Home() {
                     <div className="ml-2 text-xs text-yellow-500">★★★★★</div>
                   </div>
                   <div className="flex justify-between items-center mt-2">
-                    <div className="text-xs">
-                      Starts at: <span className="font-bold">₹35</span>
+                    <div className="text-xs text-gray-500">
+                      Starts at: <span className="font-bold text-gray-500">100 Birr</span>
                     </div>
                     <Button className="bg-[#2A6B67] hover:bg-[#235753] text-white text-xs py-1 px-3 h-auto rounded-md">
                       Talk
@@ -159,7 +159,7 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h3 className="text-3xl font-semibold flex items-center justify-center gap-3">
-             <span className="text-[#F97E5A]">Why RiseUp?</span>
+             <span className="text-fuchsia-400">Why RiseUp?</span>
           </h3>
           <p className="text-lg text-[#4A4A4A] max-w-3xl mx-auto">
             A therapeutic relationship is built on trust and confidence. At RiseUp, we provide you with the right expert

@@ -14,7 +14,7 @@ export default function FeedPage() {
         <div className="container flex h-16 items-center justify-between py-4">
           <div className="flex items-center gap-2">
             <Shield className="h-6 w-6 text-teal-500" />
-            <span className="text-xl font-bold">BreakFree</span>
+            <span className="text-xl font-bold">RiseUp</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
             <Link href="/" className="text-sm font-medium hover:text-teal-500 transition-colors">
@@ -491,7 +491,7 @@ export default function FeedPage() {
         <div className="container flex flex-col gap-6 py-8 md:flex-row md:items-center md:justify-between md:py-12">
           <div className="flex items-center gap-2">
             <Shield className="h-6 w-6 text-teal-500" />
-            <span className="text-xl font-bold">BreakFree</span>
+            <span className="text-xl font-bold">RiseUp</span>
           </div>
           <nav className="flex gap-4 sm:gap-6">
             <Link href="#" className="text-sm hover:underline underline-offset-4">
@@ -508,7 +508,7 @@ export default function FeedPage() {
             </Link>
           </nav>
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} BreakFree. All rights reserved.
+            &copy; {new Date().getFullYear()} RiseUp. All rights reserved.
           </p>
         </div>
       </footer>

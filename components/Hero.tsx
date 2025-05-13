@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import Image from "next/image"
 import { MessageCircle } from "lucide-react"
-
+import Hero from "../public/Hero.png"
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#FFF5F3]">
@@ -53,7 +53,7 @@ export default function Home() {
             {/* Circular Image Container */}
             <div className="relative w-[280px] h-[280px] md:w-[350px] md:h-[350px] rounded-full overflow-hidden border-4 border-white shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?q=80&w=1000&auto=format&fit=crop"
+                src={Hero}
                 alt="Person feeling better after therapy"
                 fill
                 sizes="(max-width: 768px) 280px, 350px"

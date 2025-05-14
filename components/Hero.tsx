@@ -3,6 +3,7 @@ import { Separator } from "@/components/ui/separator"
 import Image from "next/image"
 import { MessageCircle } from "lucide-react"
 import Hero from "../public/Hero.png"
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -160,7 +161,7 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h3 className="text-3xl font-semibold flex items-center justify-center gap-3">
-            <span className="text-fuchsia-400">Why RiseUp?</span>
+            <Link href="/" className="text-fuchsia-400">Why RiseUp?</Link>
           </h3>
           <p className="text-lg text-[#4A4A4A] max-w-3xl mx-auto">
             A therapeutic relationship is built on trust and confidence. At RiseUp, we provide you with the right expert

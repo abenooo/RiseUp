@@ -1,10 +1,9 @@
 "use client"
-
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Shield, ChevronDown, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useMediaQuery } from "../app/hooks/use-media-query"
+import { useMediaQuery } from "../hooks/use-media-query"
 
 function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false)
@@ -15,19 +14,35 @@ function Navbar() {
 
   const isMobile = useMediaQuery("(max-width: 1023px)")
 
-  // Close dropdowns when switching between mobile and desktop
+  // Close dropdowns only when switching from mobile to desktop
   useEffect(() => {
     setServicesOpen(false)
     setExpertsOpen(false)
-    setMobileMenuOpen(false)
-    setMobileServicesOpen(false)
-    setMobileExpertsOpen(false)
+
+    // Only reset mobile menu when screen size changes, not the dropdown states
+    if (isMobile === false) {
+      setMobileMenuOpen(false)
+      // We don't reset mobileServicesOpen and mobileExpertsOpen here
+      // so they persist when reopening the mobile menu
+    }
   }, [isMobile])
 
   // Close mobile menu when clicking outside
   useEffect(() => {
-    const handleClickOutside = () => {
-      if (mobileMenuOpen) setMobileMenuOpen(false)
+    const handleClickOutside = (e:any) => {
+      // Only close if clicking outside the mobile menu container
+      const mobileMenuContainer = document.getElementById("mobile-menu-container")
+      const hamburgerButton = document.getElementById("hamburger-button")
+
+      if (
+        mobileMenuOpen &&
+        mobileMenuContainer &&
+        !mobileMenuContainer.contains(e.target) &&
+        hamburgerButton &&
+        !hamburgerButton.contains(e.target)
+      ) {
+        setMobileMenuOpen(false)
+      }
     }
 
     document.addEventListener("click", handleClickOutside)
@@ -45,10 +60,12 @@ function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
+          id="hamburger-button"
           className="lg:hidden ml-auto mr-4 text-white p-1 rounded-md focus:outline-none"
           onClick={(e) => {
             e.stopPropagation()
             setMobileMenuOpen(!mobileMenuOpen)
+            // Don't reset dropdown states when toggling the menu
           }}
         >
           {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -371,7 +388,10 @@ function Navbar() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-40" onClick={(e) => e.stopPropagation()}>
-          <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-zinc-900 shadow-xl p-6 overflow-y-auto">
+          <div
+            id="mobile-menu-container"
+            className="fixed inset-y-0 right-0 w-full max-w-sm bg-zinc-900 shadow-xl p-6 overflow-y-auto"
+          >
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-2">
                 <Shield className="h-6 w-6 text-fuchsia-500" />

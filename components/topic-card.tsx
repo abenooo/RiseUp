@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { ArrowRight } from "lucide-react"
 
 interface TopicCardProps {
   title: string
@@ -31,13 +32,13 @@ export function TopicCard({
             className,
           )}
         >
-          <div className="relative h-40 w-full overflow-hidden">
+          <div className="relative h-48 w-full overflow-hidden">
             <Image
               src={imageUrl || "/placeholder.svg"}
               alt={title}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             {category && (
@@ -46,9 +47,13 @@ export function TopicCard({
               </span>
             )}
           </div>
-          <div className="p-4">
-            <h3 className="mb-1 text-lg font-bold text-gray-900">{title}</h3>
-            <p className="line-clamp-2 text-sm text-gray-600">{description}</p>
+          <div className="p-5">
+            <h3 className="mb-2 text-xl font-bold text-gray-900">{title}</h3>
+            <p className="mb-4 text-gray-600 line-clamp-2">{description}</p>
+            <span className="inline-flex items-center text-fuchsia-500 font-medium">
+              Learn more
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </span>
           </div>
         </div>
       </Link>

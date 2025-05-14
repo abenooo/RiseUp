@@ -11,7 +11,6 @@ export default function Navbar() {
 
   return (
     <>
- <Navbarr />
     <Hero/>
 <OurExperts/>
 <Services/>

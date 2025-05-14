@@ -1,7 +1,6 @@
 import { getTopicBySlug, allTopics } from "@/data/topics"
-import { TopicsGrid } from "@/components/topics-grid"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -111,7 +110,43 @@ export default function TopicPage({ params }: TopicPageProps) {
       {relatedTopics.length > 0 && (
         <section className="max-w-7xl mx-auto px-5 py-16 border-t border-gray-200">
           <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-8">Related Topics</h2>
-          <TopicsGrid topics={relatedTopics} variant="compact" columns={3} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {relatedTopics.map((relatedTopic) => (
+              <Link key={relatedTopic.id} href={`/topics/${relatedTopic.slug}`} className="block h-full">
+                <div className="group relative h-full overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-lg">
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image
+                      src={relatedTopic.imageUrl || "/placeholder.svg"}
+                      alt={relatedTopic.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-gray-800">
+                      {relatedTopic.category}
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="mb-2 text-xl font-bold text-gray-900">{relatedTopic.title}</h3>
+                    <p className="mb-4 text-gray-600 line-clamp-2">{relatedTopic.description}</p>
+                    <span className="inline-flex items-center text-fuchsia-500 font-medium">
+                      Learn more
+                      <svg
+                        className="ml-1 w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </section>
       )}
     </main>

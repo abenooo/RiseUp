@@ -3,16 +3,17 @@ import { Separator } from "@/components/ui/separator"
 import Image from "next/image"
 import { MessageCircle } from "lucide-react"
 import Hero from "../public/Hero.png"
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#FFF5F3]">
+    <main className="min-h-screen bg-[#FFF5F3] overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-5 py-16 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Column - Text Content */}
           <div className="space-y-8">
             <div className="space-y-2">
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
-                Build A Holistic Lifestyle 
+                Build A Holistic Lifestyle
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-[#1A1A1A]">With RiseUp Therapy</h2>
             </div>
@@ -49,11 +50,11 @@ export default function Home() {
           </div>
 
           {/* Right Column - Circular Image with Chat Bubbles */}
-          <div className="relative flex justify-center items-center py-10 md:py-16">
+          <div className="relative flex justify-center items-center py-10 md:py-16 min-h-[450px] sm:min-h-[500px]">
             {/* Circular Image Container */}
-            <div className="relative w-[280px] h-[280px] md:w-[350px] md:h-[350px] rounded-full overflow-hidden border-4 border-white shadow-xl">
+            <div className="relative w-[280px] h-[280px] md:w-[350px] md:h-[350px] rounded-full overflow-hidden border-4 border-white shadow-xl z-10">
               <Image
-                src={Hero}
+                src={Hero || "/placeholder.svg"}
                 alt="Person feeling better after therapy"
                 fill
                 sizes="(max-width: 768px) 280px, 350px"
@@ -62,11 +63,11 @@ export default function Home() {
               />
             </div>
 
-            {/* Chat Bubbles and Elements */}
+            {/* Chat Bubbles and Elements - Responsive positioning */}
             {/* Top Thought Bubble */}
-            <div className="absolute top-0 md:top-0 right-[10%] md:right-[20%]">
+            <div className="absolute top-0 md:top-0 right-0 md:right-[20%] max-w-[200px] z-20">
               <div className="relative">
-                <div className="bg-white p-3 rounded-xl shadow-md max-w-[200px] md:max-w-[220px]">
+                <div className="bg-white p-3 rounded-xl shadow-md w-full">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="text-xs text-gray-500">3am Thoughts</div>
                     <div className="text-xs bg-yellow-100 text-gray-500 px-2 py-0.5 rounded-full">Happy</div>
@@ -85,9 +86,9 @@ export default function Home() {
             </div>
 
             {/* Bottom Left Profile Card */}
-            <div className="absolute -bottom-4 md:bottom-4 left-0 md:left-0">
+            <div className="absolute -bottom-4 md:bottom-4 left-0 md:left-0 max-w-[200px] z-20">
               <div className="relative">
-                <div className="bg-white p-3 rounded-xl shadow-md max-w-[200px] md:max-w-[220px]">
+                <div className="bg-white p-3 rounded-xl shadow-md w-full">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-full overflow-hidden">
                       <Image
@@ -125,10 +126,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Side Chat Bubbles */}
-            <div className="absolute right-0 md:right-0 top-1/3">
+            {/* Right Side Chat Bubbles - Hidden on very small screens */}
+            <div className="absolute right-0 md:right-0 top-1/3 max-w-[150px] hidden sm:block z-20">
               <div className="relative">
-                <div className="bg-[#F97E5A] text-white p-2 rounded-xl shadow-md max-w-[150px]">
+                <div className="bg-[#F97E5A] text-white p-2 rounded-xl shadow-md w-full">
                   <p className="text-xs md:text-sm">"I don't feel good today."</p>
                 </div>
                 {/* Connector */}
@@ -137,9 +138,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="absolute right-0 md:right-0 bottom-1/3">
+            <div className="absolute right-0 md:right-0 bottom-1/3 max-w-[180px] hidden sm:block z-20">
               <div className="relative">
-                <div className="bg-[#F97E5A] text-white p-2 rounded-xl shadow-md max-w-[180px]">
+                <div className="bg-[#F97E5A] text-white p-2 rounded-xl shadow-md w-full">
                   <p className="text-xs md:text-sm">That's okay. What happened?</p>
                 </div>
                 {/* Connector */}
@@ -149,9 +150,9 @@ export default function Home() {
             </div>
 
             {/* Floating Emojis */}
-            <div className="absolute top-[15%] right-[5%] text-2xl animate-bounce-slow">👋</div>
-            <div className="absolute top-[10%] left-[10%] text-2xl animate-pulse">❤️</div>
-            <div className="absolute bottom-[20%] right-[15%] text-2xl animate-bounce-slow">😊</div>
+            <div className="absolute top-[15%] right-[5%] text-2xl animate-bounce-slow z-0">👋</div>
+            <div className="absolute top-[10%] left-[10%] text-2xl animate-pulse z-0">❤️</div>
+            <div className="absolute bottom-[20%] right-[15%] text-2xl animate-bounce-slow z-0">😊</div>
           </div>
         </div>
 
@@ -159,7 +160,7 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h3 className="text-3xl font-semibold flex items-center justify-center gap-3">
-             <span className="text-fuchsia-400">Why RiseUp?</span>
+            <span className="text-fuchsia-400">Why RiseUp?</span>
           </h3>
           <p className="text-lg text-[#4A4A4A] max-w-3xl mx-auto">
             A therapeutic relationship is built on trust and confidence. At RiseUp, we provide you with the right expert

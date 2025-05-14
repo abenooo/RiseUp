@@ -11,7 +11,7 @@ interface TopicPageProps {
   }
 }
 
-export function generateMetadata({ params }: TopicPageProps) {
+export async function generateMetadata({ params }: TopicPageProps) {
   const topic = getTopicBySlug(params.slug)
 
   if (!topic) {
@@ -33,7 +33,7 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function TopicPage({ params }: TopicPageProps) {
+export default async function TopicPage({ params }: TopicPageProps) {
   const topic = getTopicBySlug(params.slug)
 
   if (!topic) {
@@ -76,7 +76,7 @@ export default function TopicPage({ params }: TopicPageProps) {
       </section>
 
       {/* Content Section - Placeholder for actual content */}
-      <section className="max-w-4xl mx-auto px-5 py-16">
+      <section className="max-w-4xl mx-auto px-5 py-16 text-gray-500">
         <div className="prose prose-lg max-w-none">
           <h2>Understanding {topic.title}</h2>
           <p>

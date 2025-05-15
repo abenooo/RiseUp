@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import Image from "next/image"
 import { MessageCircle } from "lucide-react"
-import Hero from "../public/Hero.png"
+import Hero from "../public/Hero-img.png"
 import Link from "next/link"
 
 export default function Home() {

@@ -439,7 +439,7 @@ function Navbar() {
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center gap-2">
                 <Shield className="h-6 w-6 text-fuchsia-500" />
-                <Link href='/'  className="text-2xl font-bold text-white">RiseUp</Link>
+                <Link href='/'   className="text-2xl font-bold text-white">RiseUp</Link>
               </div>
               <button
                 className="text-white p-1"

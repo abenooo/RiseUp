@@ -346,28 +346,7 @@ export default function BlogsPage() {
         </div>
       </section>
 
-      {/* Newsletter Subscription */}
-      <section className="max-w-7xl mx-auto px-5 mb-16">
-        <div className="bg-gradient-to-r from-fuchsia-500 to-purple-600 rounded-2xl p-8 md:p-12">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Stay Updated with Our Newsletter</h2>
-            <p className="text-white/90 mb-8">
-              Get the latest articles, resources, and mental health tips delivered straight to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email address"
-                className="rounded-full bg-white/20 border-white/30 text-white placeholder:text-white/70 py-6"
-              />
-              <Button className="bg-white text-fuchsia-600 hover:bg-white/90 rounded-full px-6 py-6 h-auto whitespace-nowrap">
-                Subscribe Now
-              </Button>
-            </div>
-            <p className="text-white/70 text-sm mt-4">We respect your privacy. Unsubscribe at any time.</p>
-          </div>
-        </div>
-      </section>
+     
     </main>
   )
 }

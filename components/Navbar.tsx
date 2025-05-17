@@ -396,10 +396,10 @@ function Navbar() {
             AI Friend
           </Link>
           <Link
-            href="/find-therapists"
+            href="/vent"
             className="text-base font-medium text-zinc-200 hover:text-white hover:bg-zinc-800 transition-colors px-3 xl:px-4 py-2 rounded-full"
           >
-            Find Therapists
+            Vent Here
           </Link>
         </nav>
 
@@ -642,7 +642,7 @@ function Navbar() {
                 href="/find-therapists"
                 className="block text-base font-medium text-white py-3 border-b border-zinc-800"
               >
-                Find Therapists
+                Vent Here
               </Link>
             </nav>
 

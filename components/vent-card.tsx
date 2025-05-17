@@ -11,7 +11,7 @@ interface VentCardProps {
 export function VentCard({ id, identity, content, tags }: VentCardProps) {
   return (
     <Card className="overflow-hidden transition-all duration-200 hover:shadow-md">
-      <CardHeader className="bg-purple-50 py-3 px-4 flex items-center space-x-2">
+      <CardHeader className="bg-purple-50 text-white py-3 px-4 flex items-center space-x-2">
         <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white font-bold">
           {id}
         </div>
@@ -21,11 +21,11 @@ export function VentCard({ id, identity, content, tags }: VentCardProps) {
         </div>
       </CardHeader>
       <CardContent className="p-4">
-        <p className="text-gray-700 whitespace-pre-line">{content}</p>
+        <p className="text-gray-100 whitespace-pre-line">{content}</p>
       </CardContent>
-      <CardFooter className="px-4 py-3 bg-gray-50 flex flex-wrap gap-2">
+      <CardFooter className="px-4 py-3 flex flex-wrap gap-2">
         {tags.map((tag) => (
-          <Badge key={tag} variant="outline" className="bg-white hover:bg-gray-100">
+          <Badge key={tag} variant="outline" className="bg-gray-600 hover:bg-gray-100">
             #{tag}
           </Badge>
         ))}

@@ -38,9 +38,10 @@ export default function ExpertCard({ expert }: ExpertCardProps) {
           <Image 
             src={expert.image} 
             alt={expert.name}
-            className={`object-cover w-full h-full transition-transform duration-700 ${isHovered ? 'scale-105' : 'scale-100'}`}
+            className={`object-fit w-full h-full transition-transform duration-700 ${isHovered ? 'scale-105' : 'scale-100'}`}
             width={400}
             height={300}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
           

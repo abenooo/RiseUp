@@ -140,12 +140,12 @@ export default function ExpertCard({ expert }: ExpertCardProps) {
         </div>
         
         {/* Price and Book Button */}
-        <div className="flex items-center justify-between pt-3 border-t border-zinc-800">
+        <div className="flex flex-col sm:flex-row items-center justify-between pt-3 border-t border-zinc-800 gap-3">
           <div>
             <span className="text-lg font-bold text-white">${expert.pricePerHour}</span>
             <span className="text-zinc-500 text-sm">/hour</span>
           </div>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2 justify-center sm:justify-end w-full sm:w-auto">
             <Link href={`/experts/${expert.id}`}>
               <Button
                 size="sm"

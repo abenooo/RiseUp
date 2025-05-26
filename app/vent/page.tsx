@@ -1,18 +1,224 @@
-"use client"
+// "use client"
 
-import type React from "react"
+// import type React from "react"
 
-import { useState } from "react"
-import { ChevronLeft, ChevronRight, MessageSquare, PlusCircle, ArrowLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Badge } from "@/components/ui/badge"
-import { Pagination, PaginationContent, PaginationItem, PaginationLink } from "@/components/ui/pagination"
-import { VentCard } from "@/components/vent-card"
+// import { useState } from "react"
+// import { ChevronLeft, ChevronRight, MessageSquare, PlusCircle, ArrowLeft } from "lucide-react"
+// import { Button } from "@/components/ui/button"
+// import { Textarea } from "@/components/ui/textarea"
+// import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+// import { Checkbox } from "@/components/ui/checkbox"
+// import { Badge } from "@/components/ui/badge"
+// import { Pagination, PaginationContent, PaginationItem, PaginationLink } from "@/components/ui/pagination"
+// import { VentCard } from "@/components/vent-card"
 
-// Sample data
+// // Sample data
+
+
+// // Available tags for creating a new vent
+// const tags = [
+//   "Relationship",
+//   "Teen",
+//   "School",
+//   "Friendship",
+//   "Family",
+//   "Adult",
+//   "MentalIllness",
+//   "HealthComplications",
+//   "Melancholy",
+//   "SexualAssault",
+// ]
+
+// export default function Page() {
+//   const [isCreating, setIsCreating] = useState(false)
+//   const [currentPage, setCurrentPage] = useState(1)
+//   const [content, setContent] = useState("")
+//   const [hideIdentity, setHideIdentity] = useState(true)
+//   const [selectedTags, setSelectedTags] = useState<string[]>([])
+
+//   const postsPerPage = 10
+
+//   // Calculate the posts to display on the current page
+//   const indexOfLastPost = currentPage * postsPerPage
+//   const indexOfFirstPost = indexOfLastPost - postsPerPage
+//   const currentPosts = ventPosts.slice(indexOfFirstPost, indexOfLastPost)
+
+//   // Calculate total pages
+//   const totalPages = Math.ceil(ventPosts.length / postsPerPage)
+
+//   // Generate page numbers for pagination
+//   const pageNumbers = []
+//   for (let i = 1; i <= totalPages; i++) {
+//     pageNumbers.push(i)
+//   }
+
+//   const handleTagToggle = (tag: string) => {
+//     if (selectedTags.includes(tag)) {
+//       setSelectedTags(selectedTags.filter((t) => t !== tag))
+//     } else if (selectedTags.length < 4) {
+//       setSelectedTags([...selectedTags, tag])
+//     }
+//   }
+
+//   const handleSubmit = (e: React.FormEvent) => {
+//     e.preventDefault()
+//     // In a real app, you would submit the data to your backend
+//     // For now, just reset the form and go back to the home view
+//     setContent("")
+//     setSelectedTags([])
+//     setIsCreating(false)
+//   }
+
+//   return (
+//     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
+//       <header className="py-6 px-4 md:px-6 lg:px-8 border-b">
+//         <div className="container mx-auto flex items-center justify-between">
+//           <div className="flex items-center space-x-2">
+//             <MessageSquare className="h-6 w-6 text-purple-600" />
+//             <h1 className="text-2xl font-bold text-purple-900">Unihorse Vents</h1>
+//           </div>
+//           {isCreating ? (
+//             <Button variant="outline" className="flex items-center space-x-1" onClick={() => setIsCreating(false)}>
+//               <ArrowLeft className="h-4 w-4" />
+//               <span>Back to Vents</span>
+//             </Button>
+//           ) : (
+//             <Button
+//               className="bg-purple-600 hover:bg-purple-700 flex items-center space-x-1"
+//               onClick={() => setIsCreating(true)}
+//             >
+//               <PlusCircle className="h-4 w-4" />
+//               <span>Create Vent</span>
+//             </Button>
+//           )}
+//         </div>
+//       </header>
+
+//       <main className="container mx-auto py-8 px-4 md:px-6 lg:px-8">
+//         {isCreating ? (
+//           <div className="max-w-2xl mx-auto">
+//             <Card className="shadow-lg">
+//               <CardHeader>
+//                 <CardTitle className="text-center text-2xl text-purple-900">Share Your Thoughts</CardTitle>
+//               </CardHeader>
+//               <form onSubmit={handleSubmit}>
+//                 <CardContent className="space-y-6">
+//                   <div className="flex items-center space-x-2">
+//                     <Checkbox
+//                       id="hideIdentity"
+//                       checked={hideIdentity}
+//                       onCheckedChange={(checked) => setHideIdentity(checked as boolean)}
+//                     />
+//                     <label htmlFor="hideIdentity" className="text-sm font-medium">
+//                       Hide my Identity
+//                     </label>
+//                   </div>
+
+//                   <div>
+//                     <Textarea
+//                       placeholder="I need to vent..."
+//                       className="min-h-[200px] resize-none"
+//                       value={content}
+//                       onChange={(e) => setContent(e.target.value)}
+//                       required
+//                     />
+//                   </div>
+
+//                   <div>
+//                     <p className="text-sm font-medium mb-2">Select Tags (up to 4)</p>
+//                     <div className="flex flex-wrap gap-2">
+//                       {tags.map((tag) => (
+//                         <Badge
+//                           key={tag}
+//                           variant={selectedTags.includes(tag) ? "default" : "outline"}
+//                           className={`cursor-pointer ${
+//                             selectedTags.includes(tag) ? "bg-purple-600 hover:bg-purple-700" : "hover:bg-purple-100"
+//                           }`}
+//                           onClick={() => handleTagToggle(tag)}
+//                         >
+//                           #{tag}
+//                         </Badge>
+//                       ))}
+//                     </div>
+//                   </div>
+//                 </CardContent>
+//                 <CardFooter className="flex justify-end space-x-2">
+//                   <Button type="button" variant="outline" onClick={() => setIsCreating(false)}>
+//                     Cancel
+//                   </Button>
+//                   <Button type="submit" className="bg-purple-600 hover:bg-purple-700">
+//                     Post Vent
+//                   </Button>
+//                 </CardFooter>
+//               </form>
+//             </Card>
+//           </div>
+//         ) : (
+//           <>
+//             <div className="grid gap-6">
+//               {currentPosts.map((post) => (
+//                 <VentCard key={post.id} id={post.id} identity={post.identity} content={post.content} tags={post.tags} />
+//               ))}
+//             </div>
+
+//             <Pagination className="mt-8 bg-gray-600">
+//               <PaginationContent>
+//                 {currentPage > 1 && (
+//                   <PaginationItem>
+//                     <PaginationLink onClick={() => setCurrentPage(currentPage - 1)} className="cursor-pointer">
+//                       <ChevronLeft className="h-4 w-4 mr-1" />
+//                       Prev
+//                     </PaginationLink>
+//                   </PaginationItem>
+//                 )}
+
+//                 {pageNumbers.map((number) => (
+//                   <PaginationItem key={number}>
+//                     <PaginationLink
+//                       onClick={() => setCurrentPage(number)}
+//                       isActive={currentPage === number}
+//                       className="cursor-pointer"
+//                     >
+//                       {number}
+//                     </PaginationLink>
+//                   </PaginationItem>
+//                 ))}
+
+//                 {currentPage < totalPages && (
+//                   <PaginationItem>
+//                     <PaginationLink onClick={() => setCurrentPage(currentPage + 1)} className="cursor-pointer">
+//                       Next
+//                       <ChevronRight className="h-4 w-4 ml-1" />
+//                     </PaginationLink>
+//                   </PaginationItem>
+//                 )}
+//               </PaginationContent>
+//             </Pagination>
+//           </>
+//         )}
+//       </main>
+
+//       <footer className="border-t py-6 px-4 md:px-6 lg:px-8">
+//         <div className="container mx-auto text-center text-sm text-gray-500">
+//           <p>© {new Date().getFullYear()} Unihorse. All rights reserved.</p>
+//           <p className="mt-1">A safe space to vent anonymously.</p>
+//         </div>
+//       </footer>
+//     </div>
+//   )
+// }
+"use client";
+
+import { useState } from "react";
+import { ChevronLeft, ChevronRight, MessageSquare, PlusCircle, ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Badge } from "@/components/ui/badge";
+import { Pagination, PaginationContent, PaginationItem, PaginationLink } from "@/components/ui/pagination";
+
+
 const ventPosts = [
   {
     id: 1,
@@ -124,7 +330,7 @@ const ventPosts = [
 // Available tags for creating a new vent
 const tags = [
   "Relationship",
-  "Teen",
+  "Teen", 
   "School",
   "Friendship",
   "Family",
@@ -133,145 +339,184 @@ const tags = [
   "HealthComplications",
   "Melancholy",
   "SexualAssault",
-]
+];
 
-export default function Page() {
-  const [isCreating, setIsCreating] = useState(false)
-  const [currentPage, setCurrentPage] = useState(1)
-  const [content, setContent] = useState("")
-  const [hideIdentity, setHideIdentity] = useState(true)
-  const [selectedTags, setSelectedTags] = useState<string[]>([])
+interface VentCardProps {
+  id: number;
+  identity: string;
+  content: string;
+  tags: string[];
+}
 
-  const postsPerPage = 10
+function VentCard({ id, identity, content, tags }: VentCardProps) {
+  return (
+    <Card className="bg-zinc-900 border-zinc-800 text-white hover:border-fuchsia-500/30 transition-colors">
+      <CardContent className="p-6">
+        <div className="flex items-center justify-between mb-4">
+          <span className="text-sm text-zinc-400">{identity}</span>
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="icon" className="text-zinc-400 hover:text-white">
+              <MessageSquare className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+        <p className="text-zinc-300 mb-4 line-clamp-4">{content}</p>
+        <div className="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <Badge key={tag} variant="outline" className="bg-zinc-800 text-zinc-300 border-zinc-700">
+              #{tag}
+            </Badge>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 
-  // Calculate the posts to display on the current page
-  const indexOfLastPost = currentPage * postsPerPage
-  const indexOfFirstPost = indexOfLastPost - postsPerPage
-  const currentPosts = ventPosts.slice(indexOfFirstPost, indexOfLastPost)
+export default function VentPage() {
+  const [isCreating, setIsCreating] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [content, setContent] = useState("");
+  const [hideIdentity, setHideIdentity] = useState(true);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
-  // Calculate total pages
-  const totalPages = Math.ceil(ventPosts.length / postsPerPage)
-
-  // Generate page numbers for pagination
-  const pageNumbers = []
-  for (let i = 1; i <= totalPages; i++) {
-    pageNumbers.push(i)
-  }
+  const postsPerPage = 10;
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = ventPosts.slice(indexOfFirstPost, indexOfLastPost);
+  const totalPages = Math.ceil(ventPosts.length / postsPerPage);
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   const handleTagToggle = (tag: string) => {
     if (selectedTags.includes(tag)) {
-      setSelectedTags(selectedTags.filter((t) => t !== tag))
+      setSelectedTags(selectedTags.filter((t) => t !== tag));
     } else if (selectedTags.length < 4) {
-      setSelectedTags([...selectedTags, tag])
+      setSelectedTags([...selectedTags, tag]);
     }
-  }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // In a real app, you would submit the data to your backend
-    // For now, just reset the form and go back to the home view
-    setContent("")
-    setSelectedTags([])
-    setIsCreating(false)
-  }
+    e.preventDefault();
+    setContent("");
+    setSelectedTags([]);
+    setIsCreating(false);
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
-      <header className="py-6 px-4 md:px-6 lg:px-8 border-b">
-        <div className="container mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <MessageSquare className="h-6 w-6 text-purple-600" />
-            <h1 className="text-2xl font-bold text-purple-900">Unihorse Vents</h1>
+    <main className="min-h-screen bg-black text-white">
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center gap-2">
+            <MessageSquare className="h-6 w-6 text-fuchsia-500" />
+            <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-white to-fuchsia-300 bg-clip-text text-transparent">
+              Vent Anonymously
+            </h1>
           </div>
+          
           {isCreating ? (
-            <Button variant="outline" className="flex items-center space-x-1" onClick={() => setIsCreating(false)}>
+            <Button 
+              variant="outline" 
+              className="border-zinc-700 text-zinc-300 hover:text-white flex items-center gap-2"
+              onClick={() => setIsCreating(false)}
+            >
               <ArrowLeft className="h-4 w-4" />
-              <span>Back to Vents</span>
+              Back to Vents
             </Button>
           ) : (
             <Button
-              className="bg-purple-600 hover:bg-purple-700 flex items-center space-x-1"
+              className="bg-fuchsia-600 hover:bg-fuchsia-700 flex items-center gap-2"
               onClick={() => setIsCreating(true)}
             >
               <PlusCircle className="h-4 w-4" />
-              <span>Create Vent</span>
+              Create Vent
             </Button>
           )}
         </div>
-      </header>
 
-      <main className="container mx-auto py-8 px-4 md:px-6 lg:px-8">
         {isCreating ? (
-          <div className="max-w-2xl mx-auto">
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-center text-2xl text-purple-900">Share Your Thoughts</CardTitle>
-              </CardHeader>
-              <form onSubmit={handleSubmit}>
-                <CardContent className="space-y-6">
-                  <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="hideIdentity"
-                      checked={hideIdentity}
-                      onCheckedChange={(checked) => setHideIdentity(checked as boolean)}
-                    />
-                    <label htmlFor="hideIdentity" className="text-sm font-medium">
-                      Hide my Identity
-                    </label>
-                  </div>
+          <Card className="max-w-2xl mx-auto bg-zinc-900 border-zinc-800 text-white">
+            <CardHeader>
+              <CardTitle className="text-center text-2xl">Share Your Thoughts</CardTitle>
+            </CardHeader>
+            <form onSubmit={handleSubmit}>
+              <CardContent className="space-y-6">
+                <div className="flex items-center gap-2">
+                  <Checkbox
+                    id="hideIdentity"
+                    checked={hideIdentity}
+                    onCheckedChange={(checked) => setHideIdentity(checked as boolean)}
+                  />
+                  <label htmlFor="hideIdentity" className="text-sm text-zinc-300">
+                    Hide my Identity
+                  </label>
+                </div>
 
-                  <div>
-                    <Textarea
-                      placeholder="I need to vent..."
-                      className="min-h-[200px] resize-none"
-                      value={content}
-                      onChange={(e) => setContent(e.target.value)}
-                      required
-                    />
-                  </div>
+                <Textarea
+                  placeholder="I need to vent..."
+                  className="min-h-[200px] bg-zinc-800 border-zinc-700 text-white resize-none"
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                  required
+                />
 
-                  <div>
-                    <p className="text-sm font-medium mb-2">Select Tags (up to 4)</p>
-                    <div className="flex flex-wrap gap-2">
-                      {tags.map((tag) => (
-                        <Badge
-                          key={tag}
-                          variant={selectedTags.includes(tag) ? "default" : "outline"}
-                          className={`cursor-pointer ${
-                            selectedTags.includes(tag) ? "bg-purple-600 hover:bg-purple-700" : "hover:bg-purple-100"
-                          }`}
-                          onClick={() => handleTagToggle(tag)}
-                        >
-                          #{tag}
-                        </Badge>
-                      ))}
-                    </div>
+                <div>
+                  <p className="text-sm text-zinc-300 mb-2">Select Tags (up to 4)</p>
+                  <div className="flex flex-wrap gap-2">
+                    {tags.map((tag) => (
+                      <Badge
+                        key={tag}
+                        variant={selectedTags.includes(tag) ? "default" : "outline"}
+                        className={`cursor-pointer ${
+                          selectedTags.includes(tag)
+                            ? "bg-fuchsia-600 hover:bg-fuchsia-700"
+                            : "bg-zinc-800 hover:bg-zinc-700 border-zinc-700"
+                        }`}
+                        onClick={() => handleTagToggle(tag)}
+                      >
+                        #{tag}
+                      </Badge>
+                    ))}
                   </div>
-                </CardContent>
-                <CardFooter className="flex justify-end space-x-2">
-                  <Button type="button" variant="outline" onClick={() => setIsCreating(false)}>
-                    Cancel
-                  </Button>
-                  <Button type="submit" className="bg-purple-600 hover:bg-purple-700">
-                    Post Vent
-                  </Button>
-                </CardFooter>
-              </form>
-            </Card>
-          </div>
+                </div>
+              </CardContent>
+              <CardFooter className="flex justify-end gap-2">
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="border-zinc-700 text-zinc-300 hover:text-white"
+                  onClick={() => setIsCreating(false)}
+                >
+                  Cancel
+                </Button>
+                <Button type="submit" className="bg-fuchsia-600 hover:bg-fuchsia-700">
+                  Post Vent
+                </Button>
+              </CardFooter>
+            </form>
+          </Card>
         ) : (
           <>
             <div className="grid gap-6">
               {currentPosts.map((post) => (
-                <VentCard key={post.id} id={post.id} identity={post.identity} content={post.content} tags={post.tags} />
+                <VentCard
+                  key={post.id}
+                  id={post.id}
+                  identity={post.identity}
+                  content={post.content}
+                  tags={post.tags}
+                />
               ))}
             </div>
 
-            <Pagination className="mt-8 bg-gray-600">
+            <Pagination className="mt-8">
               <PaginationContent>
                 {currentPage > 1 && (
                   <PaginationItem>
-                    <PaginationLink onClick={() => setCurrentPage(currentPage - 1)} className="cursor-pointer">
+                    <PaginationLink
+                      onClick={() => setCurrentPage(currentPage - 1)}
+                      className="cursor-pointer bg-zinc-900 border-zinc-700 text-zinc-300 hover:text-white"
+                    >
                       <ChevronLeft className="h-4 w-4 mr-1" />
                       Prev
                     </PaginationLink>
@@ -283,7 +528,11 @@ export default function Page() {
                     <PaginationLink
                       onClick={() => setCurrentPage(number)}
                       isActive={currentPage === number}
-                      className="cursor-pointer"
+                      className={`cursor-pointer ${
+                        currentPage === number
+                          ? "bg-fuchsia-600 text-white"
+                          : "bg-zinc-900 border-zinc-700 text-zinc-300 hover:text-white"
+                      }`}
                     >
                       {number}
                     </PaginationLink>
@@ -292,7 +541,10 @@ export default function Page() {
 
                 {currentPage < totalPages && (
                   <PaginationItem>
-                    <PaginationLink onClick={() => setCurrentPage(currentPage + 1)} className="cursor-pointer">
+                    <PaginationLink
+                      onClick={() => setCurrentPage(currentPage + 1)}
+                      className="cursor-pointer bg-zinc-900 border-zinc-700 text-zinc-300 hover:text-white"
+                    >
                       Next
                       <ChevronRight className="h-4 w-4 ml-1" />
                     </PaginationLink>
@@ -302,14 +554,8 @@ export default function Page() {
             </Pagination>
           </>
         )}
-      </main>
-
-      <footer className="border-t py-6 px-4 md:px-6 lg:px-8">
-        <div className="container mx-auto text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} Unihorse. All rights reserved.</p>
-          <p className="mt-1">A safe space to vent anonymously.</p>
-        </div>
-      </footer>
-    </div>
-  )
+      </div>
+      
+    </main>
+  );
 }

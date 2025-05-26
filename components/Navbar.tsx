@@ -321,66 +321,13 @@ function Navbar() {
             </div>
           </div>
 
-          {/* Talk to Experts Dropdown */}
-          <div className="relative group">
-            <button
-              className="flex items-center text-base font-medium text-zinc-200 hover:text-white hover:bg-zinc-800 transition-colors px-3 xl:px-4 py-2 rounded-full"
-              onMouseEnter={() => setExpertsOpen(true)}
-              onClick={() => setExpertsOpen(!expertsOpen)}
-            >
-              Talk to Experts
-              <ChevronDown className="ml-1 h-4 w-4" />
-            </button>
-            <div
-              className={`absolute left-0 mt-2 w-64 rounded-xl shadow-lg bg-zinc-800 border border-zinc-700 z-[1000] py-3 transition-all duration-200 ${
-                expertsOpen ? "opacity-100 visible" : "opacity-0 invisible"
-              }`}
-              onMouseEnter={() => setExpertsOpen(true)}
-              onMouseLeave={() => setExpertsOpen(false)}
-            >
-              <h3 className="text-sm font-semibold text-zinc-400 px-4 pb-2">
-                Connect with
-              </h3>
-              <div className="space-y-1">
-                <Link
-                  href="/therapists"
-                  className="block px-4 py-2 text-sm hover:bg-zinc-700 transition-colors"
-                >
-                  Therapist
-                </Link>
-                <Link
-                  href="/relationship-coaches"
-                  className="block px-4 py-2 text-sm hover:bg-zinc-700 transition-colors"
-                >
-                  Relationship Coach
-                </Link>
-                <Link
-                  href="/counseling-psychologists"
-                  className="block px-4 py-2 text-sm hover:bg-zinc-700 transition-colors"
-                >
-                  Counseling Psychologist
-                </Link>
-                <Link
-                  href="/clinical-psychologists"
-                  className="block px-4 py-2 text-sm hover:bg-zinc-700 transition-colors"
-                >
-                  Clinical Psychologist
-                </Link>
-                <Link
-                  href="/life-coaches"
-                  className="block px-4 py-2 text-sm hover:bg-zinc-700 transition-colors"
-                >
-                  Life Coach
-                </Link>
-                <Link
-                  href="/mindfulness-coaches"
-                  className="block px-4 py-2 text-sm hover:bg-zinc-700 transition-colors"
-                >
-                  Mindfulness Coach
-                </Link>
-              </div>
-            </div>
-          </div>
+          {/* Talk to Experts Link */}
+          <Link
+            href="/talk-to-experts"
+            className="text-base font-medium text-zinc-200 hover:text-white hover:bg-zinc-800 transition-colors px-3 xl:px-4 py-2 rounded-full"
+          >
+            Talk to Experts
+          </Link>
 
           {/* Other Nav Links */}
           <Link
@@ -570,7 +517,7 @@ function Navbar() {
                 )}
               </div>
 
-              {/* Talk to Experts Dropdown - Mobile */}
+              {/* Talk to Experts Link - Mobile */}
               <div>
                 <button
                   className="flex items-center justify-between w-full text-base font-medium text-white py-3 border-b border-zinc-800"
@@ -586,40 +533,10 @@ function Navbar() {
                 {mobileExpertsOpen && (
                   <div className="mt-2 pl-4 space-y-1">
                     <Link
-                      href="/therapists"
+                      href="/talk-to-experts"
                       className="block py-2 text-sm text-zinc-300"
                     >
-                      Therapist
-                    </Link>
-                    <Link
-                      href="/relationship-coaches"
-                      className="block py-2 text-sm text-zinc-300"
-                    >
-                      Relationship Coach
-                    </Link>
-                    <Link
-                      href="/counseling-psychologists"
-                      className="block py-2 text-sm text-zinc-300"
-                    >
-                      Counseling Psychologist
-                    </Link>
-                    <Link
-                      href="/clinical-psychologists"
-                      className="block py-2 text-sm text-zinc-300"
-                    >
-                      Clinical Psychologist
-                    </Link>
-                    <Link
-                      href="/life-coaches"
-                      className="block py-2 text-sm text-zinc-300"
-                    >
-                      Life Coach
-                    </Link>
-                    <Link
-                      href="/mindfulness-coaches"
-                      className="block py-2 text-sm text-zinc-300"
-                    >
-                      Mindfulness Coach
+                      Talk to Experts
                     </Link>
                   </div>
                 )}

@@ -14,28 +14,29 @@ export default function Home() {
           <div className="space-y-8">
             <div className="space-y-2">
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1A1A1A]">
-                Grow Your Faith Daily
+                Build A Holistic Lifestyle
               </h1>
-              <h2 className="text-2xl md:text-3xl font-semibold text-[#1A1A1A]">With FaithConnect</h2>
+              <h2 className="text-2xl md:text-3xl font-semibold text-[#1A1A1A]">With RiseUp Therapy</h2>
             </div>
 
             <ul className="space-y-6">
               <li className="flex items-start">
                 <span className="text-[#F97E5A] text-3xl mr-4 mt-1">•</span>
                 <p className="text-lg text-[#4A4A4A]">
-                  Build consistent spiritual habits with daily devotionals, prayer tracking, and Bible reading plans.
+                  Understand yourself in ways you never thought you would by talking to industry professionals.
                 </p>
               </li>
               <li className="flex items-start">
                 <span className="text-[#F97E5A] text-3xl mr-4 mt-1">•</span>
                 <p className="text-lg text-[#4A4A4A]">
-                  Connect with fellow believers in small groups, prayer circles, and community events.
+                  Get 24x7 online support, whether it is in the middle of a hectic workday or when you can't sleep at
+                  night.
                 </p>
               </li>
               <li className="flex items-start">
                 <span className="text-[#F97E5A] text-3xl mr-4 mt-1">•</span>
                 <p className="text-lg text-[#4A4A4A]">
-                  Share your spiritual journey, prayer requests, and testimonies with a supportive Christian community.
+                  Our experts are simply a click away; connect with them anytime, anyday.
                 </p>
               </li>
             </ul>
@@ -45,7 +46,7 @@ export default function Home() {
               className="text-lg bg-fuchsia-400 text-white hover:bg-fuchsia-500 rounded-md px-6 py-6 h-auto flex items-center gap-2"
             >
               <MessageCircle size={20} />
-              Join Community
+              Chat with us
             </Button>
           </div>
 
@@ -69,13 +70,13 @@ export default function Home() {
               <div className="relative">
                 <div className="bg-white p-3 rounded-xl shadow-md w-full">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="text-xs text-gray-500">Daily Devotion</div>
-                    <div className="text-xs bg-yellow-100 text-gray-500 px-2 py-0.5 rounded-full">Blessed</div>
+                    <div className="text-xs text-gray-500">3am Thoughts</div>
+                    <div className="text-xs bg-yellow-100 text-gray-500 px-2 py-0.5 rounded-full">Happy</div>
                   </div>
-                  <p className="text-sm text-gray-500 font-medium">God's grace is sufficient for me...</p>
+                  <p className="text-sm text-gray-500 font-medium">I feel better after therapy...</p>
                   <div className="flex items-center gap-1 mt-2">
-                    <span>🙏</span>
-                    <span>✝️</span>
+                    <span>🧡</span>
+                    <span>🤗</span>
                     <span className="text-xs ml-1">13</span>
                   </div>
                 </div>
@@ -92,8 +93,8 @@ export default function Home() {
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 rounded-full overflow-hidden">
                       <Image
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
-                        alt="Pastor"
+                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
+                        alt="Therapist"
                         width={40}
                         height={40}
                         className="object-cover"
@@ -101,10 +102,10 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="flex items-center">
-                        <p className="text-sm text-gray-500 font-medium">Pastor David</p>
+                        <p className="text-sm text-gray-500 font-medium">Abenezer K.</p>
                         <span className="ml-1 text-orange-500">●</span>
                       </div>
-                      <p className="text-xs text-gray-600">Spiritual Mentor</p>
+                      <p className="text-xs text-gray-600">Positive Mindset Coach</p>
                     </div>
                   </div>
                   <div className="flex items-center mt-1">
@@ -113,10 +114,10 @@ export default function Home() {
                   </div>
                   <div className="flex justify-between items-center mt-2">
                     <div className="text-xs text-gray-500">
-                      Starts at: <span className="font-bold text-gray-500">Free</span>
+                      Starts at: <span className="font-bold text-gray-500">100 Birr</span>
                     </div>
                     <Button className="bg-[#2A6B67] hover:bg-[#235753] text-white text-xs py-1 px-3 h-auto rounded-md">
-                      Connect
+                      Talk
                     </Button>
                   </div>
                 </div>
@@ -130,7 +131,7 @@ export default function Home() {
             <div className="absolute right-0 md:right-0 top-1/3 max-w-[150px] hidden sm:block z-20">
               <div className="relative">
                 <div className="bg-[#F97E5A] text-white p-2 rounded-xl shadow-md w-full">
-                  <p className="text-xs md:text-sm">"Please pray for my family."</p>
+                  <p className="text-xs md:text-sm">"I don't feel good today."</p>
                 </div>
                 {/* Connector */}
                 <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 rotate-45 bg-[#F97E5A]"></div>
@@ -141,7 +142,7 @@ export default function Home() {
             <div className="absolute right-0 md:right-0 bottom-1/3 max-w-[180px] hidden sm:block z-20">
               <div className="relative">
                 <div className="bg-[#F97E5A] text-white p-2 rounded-xl shadow-md w-full">
-                  <p className="text-xs md:text-sm">I'm praying for you right now. 🙏</p>
+                  <p className="text-xs md:text-sm">That's okay. What happened?</p>
                 </div>
                 {/* Connector */}
                 <div className="absolute -left-4 top-1/2 transform -translate-y-1/2 w-4 h-4 rotate-45 bg-[#F97E5A]"></div>
@@ -160,10 +161,11 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h3 className="text-3xl font-semibold flex items-center justify-center gap-3">
-            <Link href="/" className="text-fuchsia-400">Why FaithConnect?</Link>
+            <Link href="/" className="text-fuchsia-400">Why RiseUp?</Link>
           </h3>
           <p className="text-lg text-[#4A4A4A] max-w-3xl mx-auto">
-            Christian community is built on faith, love, and mutual support. At FaithConnect, we provide you with the right spiritual mentors and community to help you grow in your faith journey.
+            A therapeutic relationship is built on trust and confidence. At RiseUp, we provide you with the right expert
+            who can help you feel safe and comfortable in your mental health journey.
           </p>
         </div>
       </div>

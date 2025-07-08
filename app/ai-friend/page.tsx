@@ -20,7 +20,7 @@ export default function AIFriend() {
     {
       id: "1",
       type: "ai",
-      content: "Hi! I'm Grace, your AI prayer partner. I'm here to pray with you, share encouragement, and support your spiritual journey. How can I pray for you today?",
+      content: "Hi! I'm Rise, your AI friend. I'm here to chat, listen, and support you. How are you feeling today?",
       timestamp: new Date()
     }
   ]);
@@ -62,17 +62,15 @@ export default function AIFriend() {
     
     // Simple response logic based on user input
     if (userMessage.toLowerCase().includes("how are you")) {
-      response = "I'm blessed, thank you for asking! More importantly, how is your heart today? How can I pray for you?";
-    } else if (userMessage.toLowerCase().includes("pray") || userMessage.toLowerCase().includes("prayer")) {
-      response = "I would love to pray with you! Let's bring your concerns to God together. What's on your heart that you'd like to pray about?";
-    } else if (userMessage.toLowerCase().includes("sad") || userMessage.toLowerCase().includes("struggling")) {
-      response = "I'm sorry you're going through a difficult time. Remember that God is close to the brokenhearted (Psalm 34:18). Would you like me to pray for you or share some encouraging verses?";
-    } else if (userMessage.toLowerCase().includes("anxious") || userMessage.toLowerCase().includes("worried")) {
-      response = "I understand worry can feel overwhelming. Remember Jesus' words: 'Do not worry about tomorrow, for tomorrow will worry about itself' (Matthew 6:34). Let's pray about your concerns together.";
-    } else if (userMessage.toLowerCase().includes("thankful") || userMessage.toLowerCase().includes("blessed")) {
-      response = "Praise God! It's beautiful to hear your heart of gratitude. What blessings has God shown you recently?";
+      response = "I'm doing well, thank you for asking! More importantly, how are you feeling?";
+    } else if (userMessage.toLowerCase().includes("sad") || userMessage.toLowerCase().includes("depressed")) {
+      response = "I'm sorry to hear that you're feeling this way. Would you like to talk about what's bothering you? Remember, it's okay to not be okay, and seeking help is a sign of strength.";
+    } else if (userMessage.toLowerCase().includes("anxious") || userMessage.toLowerCase().includes("anxiety")) {
+      response = "I understand anxiety can be overwhelming. Let's take a deep breath together. Would you like to try a quick grounding exercise?";
+    } else if (userMessage.toLowerCase().includes("happy") || userMessage.toLowerCase().includes("good")) {
+      response = "That's wonderful to hear! What's been making you feel good lately?";
     } else {
-      response = "Thank you for sharing that with me. How can I support you in prayer today? Remember, God hears every prayer and cares deeply about what's on your heart.";
+      response = "Thank you for sharing that with me. Would you like to tell me more about how that makes you feel?";
     }
     
     setIsTyping(false);
@@ -116,10 +114,10 @@ export default function AIFriend() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-white to-fuchsia-300 bg-clip-text text-transparent">
-            Your AI Prayer Partner
+            Your AI Friend & Companion
           </h1>
           <p className="text-zinc-400 max-w-2xl mx-auto">
-            A sacred space to share your prayers and spiritual journey. I'm here to pray with you, encourage you, and support your faith 24/7.
+            A safe space to share your thoughts and feelings. I'm here to listen, support, and chat with you 24/7.
           </p>
         </div>
         
@@ -194,7 +192,7 @@ export default function AIFriend() {
                   ref={textareaRef}
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
-                  placeholder="Share your prayer request or what's on your heart..."
+                  placeholder="Type your message..."
                   className="w-full pr-24 resize-none bg-zinc-800 border-zinc-700 focus:border-fuchsia-500 text-white"
                   rows={1}
                   onKeyDown={(e) => {
@@ -245,21 +243,21 @@ export default function AIFriend() {
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
           <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-4">
-            <h3 className="text-white font-medium mb-2">Always Available for Prayer</h3>
+            <h3 className="text-white font-medium mb-2">24/7 Availability</h3>
             <p className="text-sm text-zinc-400">
-              I'm always here to pray with you whenever you need spiritual support.
+              I'm always here to chat whenever you need someone to talk to.
             </p>
           </div>
           <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-4">
-            <h3 className="text-white font-medium mb-2">Sacred & Private</h3>
+            <h3 className="text-white font-medium mb-2">Safe & Private</h3>
             <p className="text-sm text-zinc-400">
-              Your prayers and conversations are completely private and sacred.
+              Your conversations are completely private and secure.
             </p>
           </div>
           <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-4">
-            <h3 className="text-white font-medium mb-2">Grace-Filled Space</h3>
+            <h3 className="text-white font-medium mb-2">Judgment-Free Zone</h3>
             <p className="text-sm text-zinc-400">
-              Share your heart freely in a space filled with God's grace and love.
+              Share your thoughts freely without fear of judgment.
             </p>
           </div>
         </div>

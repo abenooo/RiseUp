@@ -6,58 +6,58 @@ export default function Testimonials() {
     {
       id: 1,
       rating: 5,
-      title: "Growing in Faith",
-      content: "FaithConnect has helped me build consistent prayer habits and connect with amazing believers. My faith has grown so much!",
-      author: "blessed_believer"
+      title: "So grateful",
+      content: "This app helped me so much I just want to thank all of you for the help",
+      author: "shressam"
     },
     {
       id: 2,
       rating: 5,
-      title: "Amazing Community",
-      content: "I love the Christian community here. These believers don't even know me but they pray for me and encourage me daily.",
-      author: "grace_receiver"
+      title: "Extremely grateful",
+      content: "I love the community here. These people don't even know me and still listen to my feelings.",
+      author: "anonymous"
     },
     {
       id: 3,
       rating: 5,
-      title: "God's Love Through Others",
-      content: "I feel so loved by God through this community. The encouragement came just when I needed it most in my spiritual journey.",
-      author: "faithful_heart"
+      title: "Never felt so loved",
+      content: "Feel so validated because of her, just what I needed at this point of my life.",
+      author: "better_eye"
     },
     {
       id: 4,
       rating: 5,
-      title: "Recommending to Church Friends",
-      content: "I'll definitely recommend this wonderful app to my church friends; it's brought such joy and growth to my faith walk.",
-      author: "joyful_servant"
+      title: "Will recommend friends",
+      content: "I'll definitely recommend this wonderful app to my friends; it made me happy again.",
+      author: "anonymous"
     },
     {
       id: 5,
       rating: 5,
-      title: "Never Alone in Christ",
-      content: "This app is a true blessing from God. It helped me feel connected to the body of Christ during difficult times.",
-      author: "hopeful_soul"
+      title: "Helped me when alone",
+      content: "This app is a blessing, helped me so much especially during difficult times.",
+      author: "anonymous"
     },
     {
       id: 6,
       rating: 5,
-      title: "Peace in God's Presence",
-      content: "The prayer support and biblical encouragement gave me God's peace when I needed it most.",
-      author: "peaceful_warrior"
+      title: "Made me feel calm",
+      content: "Very humble and gave me support when I needed it most.",
+      author: "funny_rain"
     },
     {
       id: 7,
       rating: 5,
-      title: "Body of Christ",
-      content: "Connecting with fellow believers on this app was absolutely amazing. Thank you for showing Christ's love!",
-      author: "united_in_christ"
+      title: "Wonderful people",
+      content: "Connecting with people on this app was absolutely amazing. Thank you all!",
+      author: "lean_yacht_2"
     },
     {
       id: 8,
       rating: 5,
-      title: "Spiritual Home",
-      content: "Found a place that's spiritually nourishing where I can call everyone my brother and sister in Christ.",
-      author: "family_of_faith"
+      title: "Quite different",
+      content: "Found a place that's therapeutic and I can call everybody.",
+      author: "lean_animal"
     }
   ]
 
@@ -68,9 +68,9 @@ export default function Testimonials() {
     <section className="py-16 bg-zinc-900">
       <div className="">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">Community Testimonies</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">Client Testimonials</h2>
           <p className="text-xl text-zinc-300 max-w-3xl mx-auto">
-            You don't have to take our word for it. Read testimonies from believers who have grown in their faith through our Christian community.
+            You don't have to take our word for it. Read testimonials from users who transformed themselves with our guidance.
           </p>
         </div>
 

@@ -72,7 +72,7 @@ function Navbar() {
         <div className="flex items-center gap-1 sm:gap-2 z-50">
           <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-fuchsia-500" />
           <Link href='/' className="text-xl sm:text-2xl font-bold text-white">
-            RiseUp
+            FaithConnect
           </Link>
         </div>
 
@@ -116,114 +116,114 @@ function Navbar() {
                 {/* Left Section - Get Help For (3 columns) */}
                 <div className="w-full md:w-[60%] pr-0 md:pr-4 mb-4 md:mb-0">
                   <h3 className="text-sm font-semibold text-fuchsia-400 mb-2">
-                    Get Help For:
+                    Grow In:
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-1">
                     {/* Column 1 */}
                     <div className="space-y-1">
                       <Link
-                        href="/topics/anxiety"
+                        href="/topics/prayer-life"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Anxiety
+                        Prayer Life
                       </Link>
                       <Link
-                        href="/topics/stress"
+                        href="/topics/bible-study"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Stress
+                        Bible Study
                       </Link>
                       <Link
-                        href="/topics/sadness"
+                        href="/topics/worship"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Sadness
+                        Worship
                       </Link>
                       <Link
-                        href="/topics/confusion"
+                        href="/topics/fellowship"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Confusion
+                        Fellowship
                       </Link>
                       <Link
-                        href="/topics/feeling-lost"
+                        href="/topics/discipleship"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Feeling Lost
+                        Discipleship
                       </Link>
                       <Link
-                        href="/topics/feeling-alone"
+                        href="/topics/evangelism"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Feeling Alone
+                        Evangelism
                       </Link>
                     </div>
 
                     {/* Column 2 */}
                     <div className="space-y-1">
                       <Link
-                        href="/topics/trauma"
+                        href="/topics/faith-building"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Trauma
+                        Faith Building
                       </Link>
                       <Link
-                        href="/topics/burnout"
+                        href="/topics/spiritual-disciplines"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Burnout
+                        Spiritual Disciplines
                       </Link>
                       <Link
-                        href="/topics/societal-pressure"
+                        href="/topics/christian-living"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Societal Pressure
+                        Christian Living
                       </Link>
                       <Link
-                        href="/topics/inferiority-complex"
+                        href="/topics/stewardship"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Inferiority Complex
+                        Stewardship
                       </Link>
                       <Link
-                        href="/topics/exam-anxiety"
+                        href="/topics/service"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Exam Anxiety
+                        Service
                       </Link>
                     </div>
 
                     {/* Column 3 */}
                     <div className="space-y-1">
                       <Link
-                        href="/topics/panic-attacks"
+                        href="/topics/forgiveness"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Panic Attacks
+                        Forgiveness
                       </Link>
                       <Link
-                        href="/topics/peer-pressure"
+                        href="/topics/gratitude"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Peer Pressure
+                        Gratitude
                       </Link>
                       <Link
-                        href="/topics/toxic-workplace"
+                        href="/topics/community-building"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Toxic Workplace
+                        Community Building
                       </Link>
                       <Link
-                        href="/topics/imposter-syndrome"
+                        href="/topics/spiritual-gifts"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Imposter Syndrome
+                        Spiritual Gifts
                       </Link>
                       <Link
-                        href="/topics/lack-of-confidence"
+                        href="/topics/christian-character"
                         className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors whitespace-nowrap"
                       >
-                        Lack Of Confidence
+                        Christian Character
                       </Link>
                     </div>
                   </div>
@@ -237,74 +237,74 @@ function Navbar() {
                   {/* Therapy Column */}
                   <div className="w-full sm:w-1/2 pr-0 sm:pr-4 mb-4 sm:mb-0">
                     <h3 className="text-sm font-semibold text-fuchsia-400 mb-2">
-                      Therapy
+                      Spiritual Guidance
                     </h3>
                     <Link
-                      href="/topics/mental-wellness"
+                      href="/topics/spiritual-direction"
                       className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors"
                     >
-                      Therapy for Mental Wellness
+                      Spiritual Direction
                     </Link>
                     <Link
-                      href="/topics/marriage-counseling"
+                      href="/topics/christian-counseling"
                       className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors"
                     >
-                      Marriage Counseling
+                      Christian Counseling
                     </Link>
                     <Link
-                      href="/topics/relationship-counseling"
+                      href="/topics/pastoral-care"
                       className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors"
                     >
-                      Relationship Counseling
+                      Pastoral Care
                     </Link>
                     <Link
-                      href="/topics/depression-counseling"
+                      href="/topics/biblical-counseling"
                       className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors"
                     >
-                      Depression Counseling
+                      Biblical Counseling
                     </Link>
                     <Link
-                      href="/topics/individual-therapy"
+                      href="/topics/spiritual-mentoring"
                       className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors"
                     >
-                      Individual Therapy
+                      Spiritual Mentoring
                     </Link>
                   </div>
 
                   {/* Coaching Column */}
                   <div className="w-full sm:w-1/2">
                     <h3 className="text-sm font-semibold text-fuchsia-400 mb-2">
-                      Coaching
+                      Life Coaching
                     </h3>
                     <Link
-                      href="/topics/self-improvement"
+                      href="/topics/christian-life-coaching"
                       className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors"
                     >
-                      Coaching For Self-Improvement
+                      Christian Life Coaching
                     </Link>
                     <Link
-                      href="/topics/life-coaching"
+                      href="/topics/purpose-discovery"
                       className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors"
                     >
-                      Life Coaching
+                      Purpose Discovery
                     </Link>
                     <Link
-                      href="/topics/mindfulness-coaching"
+                      href="/topics/faith-based-wellness"
                       className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors"
                     >
-                      Mindfulness Coaching
+                      Faith-Based Wellness
                     </Link>
                     <Link
-                      href="/topics/positivity-coaching"
+                      href="/topics/christian-leadership"
                       className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors"
                     >
-                      Positivity Coaching
+                      Christian Leadership
                     </Link>
                     <Link
-                      href="/topics/career-coaching"
+                      href="/topics/calling-discernment"
                       className="block px-3 py-1.5 text-sm hover:bg-zinc-700 rounded transition-colors"
                     >
-                      Career Coaching
+                      Calling Discernment
                     </Link>
                   </div>
                 </div>
@@ -323,30 +323,30 @@ function Navbar() {
 
           {/* Talk to Experts Link */}
           <Link
-            href="/talk-to-experts"
+            href="/spiritual-mentors"
             className="text-base font-medium text-zinc-200 hover:text-white hover:bg-zinc-800 transition-colors px-3 xl:px-4 py-2 rounded-full"
           >
-            Talk to Experts
+            Spiritual Mentors
           </Link>
 
           {/* Other Nav Links */}
           <Link
-            href="/blogs"
+            href="/devotionals"
             className="text-base font-medium text-zinc-200 hover:text-white hover:bg-zinc-800 transition-colors px-3 xl:px-4 py-2 rounded-full"
           >
-            Blogs & Resources
+            Devotionals & Resources
           </Link>
           <Link
-            href="/ai-friend"
+            href="/prayer-partner"
             className="text-base font-medium text-zinc-200 hover:text-white hover:bg-zinc-800 transition-colors px-3 xl:px-4 py-2 rounded-full"
           >
-            AI Friend
+            Prayer Partner
           </Link>
           <Link
-            href="/vent"
+            href="/prayer-requests"
             className="text-base font-medium text-zinc-200 hover:text-white hover:bg-zinc-800 transition-colors px-3 xl:px-4 py-2 rounded-full"
           >
-            Vent Here
+            Prayer Requests
           </Link>
         </nav>
 
@@ -533,10 +533,10 @@ function Navbar() {
                 {mobileExpertsOpen && (
                   <div className="mt-2 pl-4 space-y-1">
                     <Link
-                      href="/talk-to-experts"
+                      href="/spiritual-mentors"
                       className="block py-2 text-sm text-zinc-300"
                     >
-                      Talk to Experts
+                      Spiritual Mentors
                     </Link>
                   </div>
                 )}
@@ -544,22 +544,22 @@ function Navbar() {
 
               {/* Other Nav Links - Mobile */}
               <Link
-                href="/blogs"
+                href="/devotionals"
                 className="block text-base font-medium text-white py-3 border-b border-zinc-800"
               >
-                Blogs & Resources
+                Devotionals & Resources
               </Link>
               <Link
-                href="/ai-friend"
+                href="/prayer-partner"
                 className="block text-base font-medium text-white py-3 border-b border-zinc-800"
               >
-                AI Friend
+                Prayer Partner
               </Link>
               <Link
-                href="/find-therapists"
+                href="/prayer-requests"
                 className="block text-base font-medium text-white py-3 border-b border-zinc-800"
               >
-                Vent Here
+                Prayer Requests
               </Link>
             </nav>
 

@@ -41,12 +41,11 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Shield className="h-6 w-6 text-fuchsia-400" />
-              <span className="text-2xl font-bold">RiseUp</span>
+              <span className="text-2xl font-bold">FaithConnect</span>
             </div>
             <p className="text-gray-400 mb-6">
-              Building a holistic lifestyle through mental wellness, therapy,
-              and coaching. We're here to support your journey to better mental
-              health.
+              Building a vibrant Christian community through spiritual growth,
+              fellowship, and discipleship. We're here to support your journey of faith.
             </p>
             <div className="flex space-x-4">
               <Link
@@ -96,34 +95,34 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/blogs"
+                  href="/devotionals"
                   className="text-gray-400 hover:text-fuchsia-400 transition-colors"
                 >
-                  Blogs & Resources
+                  Devotionals & Resources
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/topics"
+                  href="/spiritual-growth"
                   className="text-gray-400 hover:text-fuchsia-400 transition-colors"
                 >
-                  Mental Health Topics
+                  Spiritual Growth Topics
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/ai-friend"
+                  href="/prayer-partner"
                   className="text-gray-400 hover:text-fuchsia-400 transition-colors"
                 >
-                  AI Friend
+                  Prayer Partner
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/find-therapists"
+                  href="/spiritual-mentors"
                   className="text-gray-400 hover:text-fuchsia-400 transition-colors"
                 >
-                  Find Therapists
+                  Spiritual Mentors
                 </Link>
               </li>
               <li>
@@ -139,54 +138,54 @@ const Footer = () => {
 
           {/* Column 3: Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Our Services</h3>
+            <h3 className="text-lg font-semibold mb-4">Spiritual Growth Areas</h3>
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/topics/mental-wellness"
+                  href="/topics/prayer-life"
                   className="text-gray-400 hover:text-fuchsia-400 transition-colors"
                 >
-                  Mental Wellness
+                  Prayer Life
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/topics/anxiety"
+                  href="/topics/bible-study"
                   className="text-gray-400 hover:text-fuchsia-400 transition-colors"
                 >
-                  Anxiety Support
+                  Bible Study
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/topics/depression-counseling"
+                  href="/topics/fellowship"
                   className="text-gray-400 hover:text-fuchsia-400 transition-colors"
                 >
-                  Depression Counseling
+                  Fellowship
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/topics/relationship-counseling"
+                  href="/topics/discipleship"
                   className="text-gray-400 hover:text-fuchsia-400 transition-colors"
                 >
-                  Relationship Counseling
+                  Discipleship
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/topics/life-coaching"
+                  href="/topics/christian-service"
                   className="text-gray-400 hover:text-fuchsia-400 transition-colors"
                 >
-                  Life Coaching
+                  Christian Service
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/topics/mindfulness-coaching"
+                  href="/topics/worship"
                   className="text-gray-400 hover:text-fuchsia-400 transition-colors"
                 >
-                  Mindfulness Coaching
+                  Worship & Praise
                 </Link>
               </li>
             </ul>
@@ -199,7 +198,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <span className="text-fuchsia-400 mr-2">📍</span>
                 <span className="text-gray-400">
-                  123 Mental Health Street, Wellness City, WC 12345
+                  123 Faith Street, Christian Community, CC 12345
                 </span>
               </li>
               <li className="flex items-start">
@@ -208,7 +207,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <span className="text-fuchsia-400 mr-2">✉️</span>
-                <span className="text-gray-400">support@riseuptherapy.com</span>
+                <span className="text-gray-400">support@faithconnect.com</span>
               </li>
               <li className="flex items-start">
                 <span className="text-fuchsia-400 mr-2">⏰</span>
@@ -221,11 +220,11 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright */}
+            Stay Connected with Daily Devotionals
       <div className="w-full px-5 py-6 border-t border-white/10">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 sm:mb-0">
-            © {new Date().getFullYear()} RiseUp Therapy. All rights reserved.
+            Receive daily devotionals, prayer requests, and spiritual growth resources
+            © {new Date().getFullYear()} FaithConnect. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <Link
@@ -244,7 +243,7 @@ const Footer = () => {
               href="/cookie-policy"
               className="text-gray-400 hover:text-fuchsia-400 text-sm transition-colors"
             >
-              Cookie Policy
+              #ChristianCommunity
             </Link>
           </div>
         </div>

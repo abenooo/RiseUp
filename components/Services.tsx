@@ -5,58 +5,58 @@ import { HeartPulse, Brain, HeartCrack, AlertTriangle, HelpCircle, SmilePlus, Ac
 export default function Services() {
   const issues = [
     {
-      title: "Anxiety",
-      description: "Are negative thoughts taking you away from reality? Talk to renowned experts and feel better right away.",
-      icon: <AlertTriangle className="h-6 w-6 text-fuchsia-500" />,
-      href: "/anxiety"
-    },
-    {
-      title: "Stress",
-      description: "Has stress made you stop living your life to the fullest? Connect with top professionals and regain joy today.",
-      icon: <Activity className="h-6 w-6 text-fuchsia-500" />,
-      href: "/stress"
-    },
-    {
-      title: "Depression",
-      description: "Feeling persistently sad or empty? Our specialists can help you find light again.",
-      icon: <HeartCrack className="h-6 w-6 text-fuchsia-500" />,
-      href: "/depression"
-    },
-    {
-      title: "Trauma",
-      description: "Struggling with past experiences? Healing begins with compassionate professional support.",
-      icon: <ShieldAlert className="h-6 w-6 text-fuchsia-500" />,
-      href: "/trauma"
-    },
-    {
-      title: "Relationship Issues",
-      description: "Challenges in personal connections? Learn healthy ways to communicate and relate.",
+      title: "Prayer Life",
+      description: "Strengthen your connection with God through guided prayer practices and community prayer support.",
       icon: <HeartPulse className="h-6 w-6 text-fuchsia-500" />,
-      href: "/relationships"
+      href: "/prayer-life"
     },
     {
-      title: "Self-Esteem",
-      description: "Doubting your self-worth? Build confidence with our positive psychology approaches.",
+      title: "Bible Study",
+      description: "Dive deeper into God's Word with structured study plans and community discussion groups.",
+      icon: <Brain className="h-6 w-6 text-fuchsia-500" />,
+      href: "/bible-study"
+    },
+    {
+      title: "Fellowship",
+      description: "Build meaningful relationships with fellow believers through small groups and community events.",
+      icon: <HeartPulse className="h-6 w-6 text-fuchsia-500" />,
+      href: "/fellowship"
+    },
+    {
+      title: "Spiritual Disciplines",
+      description: "Develop consistent habits of prayer, fasting, meditation, and service to grow closer to God.",
+      icon: <Activity className="h-6 w-6 text-fuchsia-500" />,
+      href: "/spiritual-disciplines"
+    },
+    {
+      title: "Christian Relationships",
+      description: "Build Christ-centered relationships in marriage, family, and friendships with biblical guidance.",
+      icon: <HeartPulse className="h-6 w-6 text-fuchsia-500" />,
+      href: "/christian-relationships"
+    },
+    {
+      title: "Identity in Christ",
+      description: "Discover your true identity and worth as a beloved child of God through biblical truth.",
       icon: <SmilePlus className="h-6 w-6 text-fuchsia-500" />,
-      href: "/self-esteem"
+      href: "/identity-in-christ"
     },
     {
-      title: "Life Transitions",
-      description: "Struggling with change? Navigate life's transitions with expert guidance.",
+      title: "Purpose & Calling",
+      description: "Discover God's unique purpose for your life and how to walk in your calling with confidence.",
       icon: <HelpCircle className="h-6 w-6 text-fuchsia-500" />,
-      href: "/transitions"
+      href: "/purpose-calling"
     },
     {
-      title: "Grief & Loss",
-      description: "Processing a significant loss? Find compassionate support for your healing journey.",
-      icon: <HeartCrack className="h-6 w-6 text-fuchsia-500" />,
-      href: "/grief"
+      title: "Worship & Praise",
+      description: "Learn to worship God in spirit and truth through music, prayer, and lifestyle worship.",
+      icon: <SmilePlus className="h-6 w-6 text-fuchsia-500" />,
+      href: "/worship-praise"
     },
     {
-      title: "Addiction",
-      description: "Seeking freedom from addictive behaviors? Discover sustainable recovery methods.",
+      title: "Christian Service",
+      description: "Find opportunities to serve others and use your gifts to build God's kingdom in your community.",
       icon: <ShieldAlert className="h-6 w-6 text-fuchsia-500" />,
-      href: "/addiction"
+      href: "/christian-service"
     }
   ]
 
@@ -64,7 +64,7 @@ export default function Services() {
     <section className="py-16 bg-zinc-900">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-12 text-white">
-          We've Got You Covered For Every Concern And Problem
+          Grow In Every Area Of Your Christian Life
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,9 +1,13 @@
 import Link from "next/link"
 import Image from "next/image"
+import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { supabase } from "@/lib/supabase"
+import { SubscriptionStatus } from "@/components/subscription-status"
 import {
   Shield,
   Search,
@@ -25,6 +29,42 @@ import {
 } from "lucide-react"
 
 export default function Dashboard() {
+  const [user, setUser] = useState<any>(null)
+  const [loading, setLoading] = useState(true)
+  const router = useRouter()
+
+  useEffect(() => {
+    checkUser()
+  }, [])
+
+  const checkUser = async () => {
+    const { data: { user } } = await supabase.auth.getUser()
+    
+    if (!user) {
+      router.push('/auth/login')
+      return
+    }
+    
+    setUser(user)
+    setLoading(false)
+  }
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut()
+    router.push('/')
+  }
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-zinc-900 text-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-fuchsia-500 mx-auto mb-4"></div>
+          <p>Loading...</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="flex min-h-screen bg-zinc-900 text-white">
       {/* Sidebar */}
@@ -105,10 +145,13 @@ export default function Dashboard() {
               <HelpCircle className="h-5 w-5" />
               <span>Help & Support</span>
             </Link>
-            <Link href="/" className="flex items-center gap-3 p-2 rounded-md hover:bg-zinc-800">
+            <button 
+              onClick={handleSignOut}
+              className="w-full flex items-center gap-3 p-2 rounded-md hover:bg-zinc-800 text-left"
+            >
               <LogOut className="h-5 w-5" />
               <span>Sign Out</span>
-            </Link>
+            </button>
           </div>
         </nav>
       </aside>
@@ -121,6 +164,7 @@ export default function Dashboard() {
             <Input placeholder="Search for Support" className="pl-10 bg-zinc-800 border-zinc-700 text-white w-full" />
           </div>
           <div className="flex items-center gap-4">
+            <SubscriptionStatus />
             <Button variant="ghost" size="icon" className="text-zinc-400 hover:text-white">
               <MessageSquare className="h-5 w-5" />
             </Button>
@@ -128,7 +172,9 @@ export default function Dashboard() {
               <Bell className="h-5 w-5" />
             </Button>
             <div className="h-8 w-8 rounded-full bg-fuchsia-900 flex items-center justify-center">
-              <span className="font-bold text-fuchsia-400">A</span>
+              <span className="font-bold text-fuchsia-400">
+                {user?.email?.charAt(0).toUpperCase() || 'U'}
+              </span>
             </div>
           </div>
         </header>
@@ -470,3 +516,4 @@ export default function Dashboard() {
     </div>
   )
 }
+"use client";

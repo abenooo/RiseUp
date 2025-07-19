@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Shield, ChevronDown, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { SubscriptionStatus } from "@/components/subscription-status";
 
 function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -352,21 +353,22 @@ function Navbar() {
 
         {/* Buttons - Desktop */}
         <div className="hidden lg:flex items-center gap-2 xl:gap-4">
-          <Link href="/login">
+          <SubscriptionStatus className="mr-2" />
+          <Link href="/pricing">
             <Button
               variant="outline"
               size="sm"
               className="border-fuchsia-600 text-fuchsia-400 bg-transparent hover:bg-fuchsia-900/20 rounded-full px-4 xl:px-6 py-2 text-sm xl:text-base font-medium"
             >
-              Log In
+              Pricing
             </Button>
           </Link>
-          <Link href="/signup">
+          <Link href="/auth/login">
             <Button
               size="sm"
               className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-full px-4 xl:px-6 py-2 text-sm xl:text-base font-medium"
             >
-              Sign Up Free
+              Get Started
             </Button>
           </Link>
         </div>
@@ -565,17 +567,17 @@ function Navbar() {
 
             {/* Buttons - Mobile */}
             <div className="mt-8 space-y-3">
-              <Link href="/login" className="block w-full">
+              <Link href="/pricing" className="block w-full">
                 <Button
                   variant="outline"
                   className="w-full border-fuchsia-600 text-fuchsia-400 bg-transparent hover:bg-fuchsia-900/20 rounded-full py-2 text-base font-medium"
                 >
-                  Log In
+                  Pricing
                 </Button>
               </Link>
-              <Link href="/signup" className="block w-full">
+              <Link href="/auth/login" className="block w-full">
                 <Button className="w-full bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded-full py-2 text-base font-medium">
-                  Sign Up Free
+                  Get Started
                 </Button>
               </Link>
             </div>
